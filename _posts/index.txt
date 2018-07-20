@@ -1382,3 +1382,36 @@ f289f09ab56e3b3587d9e9b94d59ce07	../../SunJackson.github.io/_posts//2017-04-24-f
 066cca7b1a3038728c7a896e0926d742	../../SunJackson.github.io/_posts//2015-03-16-066cca7b1a3038728c7a896e0926d742.md	Predicting Airline Delays
 b04606fdcdf035cb825318dc0eccefb7	../../SunJackson.github.io/_posts//2017-05-12-b04606fdcdf035cb825318dc0eccefb7.md	A free SSL certificate in 5 minutes
 403d73aca6d133a590a87f379e866401	../../SunJackson.github.io/_posts//2018-07-19-403d73aca6d133a590a87f379e866401.md	More MCMC – Analyzing a small dataset with 1-5 ratings
+4206204815b33c96834ca91e68c5173a	../../SunJackson.github.io/_posts/2018-07/2018-07-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
+4333c63261af35219485cfa8ee44cb25	../../SunJackson.github.io/_posts/2018-07/2018-07-4333c63261af35219485cfa8ee44cb25.md	Document worth reading: “Does modelling need a Reformation Ideas for a new grammar of modelling”
+06e704efdd753681bc8713939ab198eb	../../SunJackson.github.io/_posts/2018-07/2018-07-06e704efdd753681bc8713939ab198eb.md	Call an Amazon SageMaker model endpoint using Amazon API Gateway and AWS Lambda
+2428166e4c4d3815affdf113fe20916e	../../SunJackson.github.io/_posts/2018-07/2018-07-2428166e4c4d3815affdf113fe20916e.md	Amazon Comprehend now supports Syntax Analysis
+447fcaeff28e3c6c9baa72bbd3219b9b	../../SunJackson.github.io/_posts/2018-07/2018-07-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
+ae6917d4f8ef34e1a6d5dcc7ad9b62f7	../../SunJackson.github.io/_posts/2018-07/2018-07-ae6917d4f8ef34e1a6d5dcc7ad9b62f7.md	Create a model for predicting orthopedic pathology using Amazon SageMaker
+1f7d1f41e8593082bd06ca2c53645e7c	../../SunJackson.github.io/_posts/2018-07/2018-07-1f7d1f41e8593082bd06ca2c53645e7c.md	Whats new on arXiv
+9f90af4ea0953eb9a72a64cd4ecc59e1	../../SunJackson.github.io/_posts/2018-07/2018-07-9f90af4ea0953eb9a72a64cd4ecc59e1.md	Enhanced text classification and word vectors using Amazon SageMaker BlazingText
+087f689b4ebf34b19980dc142ed8ea22	../../SunJackson.github.io/_posts/2018-07/2018-07-087f689b4ebf34b19980dc142ed8ea22.md	If you did not already know
+447fcaeff28e3c6c9baa72bbd3219b9b	../../SunJackson.github.io/_posts/2018-07/2018-07-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
+19d449743bf93cf5bef942300e50ccaf	../../SunJackson.github.io/_posts/2018-07/2018-07-19d449743bf93cf5bef942300e50ccaf.md	Should you Start Learning Python in 2018 (Guide)
+9cf1d05cd5ce3c3b939f9e7ea5ffa3c8	../../SunJackson.github.io/_posts/2018-07/2018-07-9cf1d05cd5ce3c3b939f9e7ea5ffa3c8.md	Singapore's Heartbeat
+383c44a673bf3edda593785f08621056	../../SunJackson.github.io/_posts/2018-07/2018-07-383c44a673bf3edda593785f08621056.md	How To Remotely Send R and Python Execution to SQL Server from Jupyter Notebooks
+18c5a586d6303d75b850402f0bc8c8a4	../../SunJackson.github.io/_posts/2018-07/2018-07-18c5a586d6303d75b850402f0bc8c8a4.md	Verlet Simulations
+8c6732317708380597b80faea6ee678c	../../SunJackson.github.io/_posts/2018-07/2018-07-8c6732317708380597b80faea6ee678c.md	Why AI Isn’t A Black Box (And Its Business Value)
+a8cfe8e8504f3b4b92abc4640509687a	../../SunJackson.github.io/_posts/2018-07/2018-07-a8cfe8e8504f3b4b92abc4640509687a.md	Basic Statistics in Python: Probability
+58a22eed2e9133c7a2c59cf524b14435	../../SunJackson.github.io/_posts/2018-07/2018-07-58a22eed2e9133c7a2c59cf524b14435.md	CRN: The 10 Coolest Machine-Learning And AI Startups Of 2018 (So Far)
+ba2f27e7b85839b38dcd20c95c29c678	../../SunJackson.github.io/_posts/2018-07/2018-07-ba2f27e7b85839b38dcd20c95c29c678.md	Analysis: Do the shoes matter in marathon running?
+6493610e69cc39c1b47951b66a398a4d	../../SunJackson.github.io/_posts/2018-07/2018-07-6493610e69cc39c1b47951b66a398a4d.md	Learn to R blog series - Operators and Objects
+a31a16d43dc234938e9292c61a530af4	../../SunJackson.github.io/_posts/2018-07/2018-07-a31a16d43dc234938e9292c61a530af4.md	Import AI: #103: Testing brain-like alternatives to backpropagation, why imagining goals can lead to better robots, and why navigating cities is a useful research avenue for AI
+9a82756e76303c0797774f238d778783	../../SunJackson.github.io/_posts/2018-07/2018-07-9a82756e76303c0797774f238d778783.md	Mounting multiple data and outputs volumes
+fb2021d7767f32dd8119c3bfb5f07be4	../../SunJackson.github.io/_posts/2018-07/2018-07-fb2021d7767f32dd8119c3bfb5f07be4.md	Scanning Office 365 documents
+187ad0ad484b3d698794d1811ae3692b	../../SunJackson.github.io/_posts/2018-07/2018-07-187ad0ad484b3d698794d1811ae3692b.md	Highlights from the useR! 2018 conference in Brisbane
+3fc8dc21e10f3c1f93a3c18cc5c035b6	../../SunJackson.github.io/_posts/2018-07/2018-07-3fc8dc21e10f3c1f93a3c18cc5c035b6.md	Video: R for AI, and the Not Hotdog workshop
+333c94e7d9d7322fa7266458ca23889a	../../SunJackson.github.io/_posts/2018-07/2018-07-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-07-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+32428d4d92e93ab8a78a490af5db04a6	../../SunJackson.github.io/_posts/2018-07/2018-07-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
+c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
+2fb2999bd5483fd18bce7e15171ae15b	../../SunJackson.github.io/_posts/2018-07/2018-07-2fb2999bd5483fd18bce7e15171ae15b.md	What happens to your career when you have to retract a paper?
+8801a400696c3ac3bb31cf469872eede	../../SunJackson.github.io/_posts/2018-07/2018-07-8801a400696c3ac3bb31cf469872eede.md	Model Updates: Entity-level Sentiment Analysis and Brand New Entity Extraction Models Now Live in the Text Analysis API
