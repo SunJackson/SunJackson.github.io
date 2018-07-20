@@ -1,6 +1,6 @@
 # Site settings
-title: BY Blog
-SEOTitle: Jackson's Blog | BY Blog
+title: SunJackson Blog
+SEOTitle: Jackson's Blog
 header-img: img/post-bg-desk.jpg
 email: jacksonsunjj@gmail.com
 description: "Every failure is leading towards success."
@@ -12,7 +12,7 @@ github_repo: "https://github.com/SunJackson/SunJackson.github.io.git" # you code
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/android-chrome-192x192.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -62,13 +62,14 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
+  githubID: SunJackson
   clientID: 911bd130e19662f0bfb2                            #生成的clientID
   clientSecret: 7c9795086c79824c4dc2c516d020e05e431addbb    #生成的clientSecret
   repo: SunJackson.github.io    #仓库名称
   owner: SunJackson    #github用户名
   admin: SunJackson
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
+ 
 
 # 统计
 
