@@ -104,3 +104,5 @@ friends: [
         href: "#"
     }
 ]
+
+theme: jekyll-theme-time-machine
