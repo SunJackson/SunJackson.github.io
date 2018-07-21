@@ -65,7 +65,7 @@ tags:
 - 结构方法
 
 
-![纹理特征提取方法](wenlitezhengtiqu.jpg)
+![纹理特征提取方法](https://s1.ax1x.com/2018/07/21/P8rt4P.png)
 
 
 统计方法
