@@ -20,9 +20,8 @@ layout: default
         background: rgba(0,0,0, {{ page.header-mask }});
     }
     {% endif %}
-
 </style>
-<header class="intro-header">
+<header class="intro-header" >
     <div class="header-mask"></div>
     <div class="container">
         <div class="row">
@@ -35,7 +34,7 @@ layout: default
                     </div>
                     <h1>{{ page.title }}</h1>
                     {% comment %}
-                    always create a h2 for keeping the margin , Hux
+                        always create a h2 for keeping the margin , Hux
                     {% endcomment %}
                     {% comment %} if page.subtitle {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
@@ -52,36 +51,35 @@ layout: default
     <div class="container">
         <div class="row">
 
-            <!-- Post Container -->
+    <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
 
-                {{ content }}
+				{{ content }}
 
                 <hr style="visibility: hidden;">
 
                 <ul class="pager">
-
                     {% if page.next.url %}
                     <li class="next">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
-                           data-placement="top" title="{{page.previous.title}}">
-                            Next<br>
-                            <span>{{page.previous.title}}</span>
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                        Next<br>
+                        <span>{{page.next.title}}</span>
                         </a>
                     </li>
                     {% endif %}
+
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
-                           data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                            Previous<br>
-                            <span>{{page.next.title}}</span>
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                        Previous<br>
+                        <span>{{page.previous.title}}</span>
                         </a>
                     </li>
                     {% endif %}
+
                 </ul>
 
 
@@ -102,7 +100,6 @@ layout: default
                     id: window.location.pathname,
                     });
                     gitalk.render('gitalk-container');
-
                 </script>
                 {% endif %}
                 <!-- Gitalk end -->
@@ -117,8 +114,8 @@ layout: default
 
             </div>
 
-            <!-- Side Catalog Container -->
-            {% if page.catalog %}
+    <!-- Side Catalog Container -->
+        {% if page.catalog %}
             <div class="
                 col-lg-2 col-lg-offset-0
                 visible-lg-block
@@ -132,9 +129,9 @@ layout: default
                     <ul class="catalog-body"></ul>
                 </div>
             </div>
-            {% endif %}
+        {% endif %}
 
-            <!-- Sidebar Container -->
+    <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -146,14 +143,14 @@ layout: default
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        {% for tag in site.tags %}
-                        {% if tag[1].size > {{site.featured-condition-size}} %}
-                        <a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                            {{ tag[0] }}
-                        </a>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
+        				{% for tag in site.tags %}
+                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
+                                </a>
+                            {% endif %}
+        				{% endfor %}
+        			</div>
                 </section>
                 {% endif %}
 
@@ -163,7 +160,7 @@ layout: default
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
                     {% for friend in site.friends %}
-                    <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
                     {% endfor %}
                 </ul>
                 {% endif %}
@@ -185,7 +182,6 @@ layout: default
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
@@ -202,7 +198,6 @@ layout: default
       if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
       s.parentNode.insertBefore(o, s);
     }
-
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
@@ -214,7 +209,6 @@ layout: default
         };
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
-
 </script>
 <style>
     /* place left on bigger screen */
@@ -226,6 +220,5 @@ layout: default
             margin-top : -0.1em;
         }
     }
-
 </style>
 {% endif %}
