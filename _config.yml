@@ -57,18 +57,18 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
- disqus_username: SunJackson
+# disqus_username: SunJackson
 
 # Gitalk
-#gitalk:
-#  enable: false    #是否开启Gitalk评论
-#  githubID: SunJackson
-#  clientID: 911bd130e19662f0bfb2                            #生成的clientID
-#  clientSecret: 7c9795086c79824c4dc2c516d020e05e431addbb    #生成的clientSecret
-#  repo: SunJackson.github.io    #仓库名称
-#  owner: SunJackson    #github用户名
-#  admin: SunJackson
-#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+gitalk:
+  enable: false    #是否开启Gitalk评论
+  githubID: SunJackson
+  clientID: 911bd130e19662f0bfb2                            #生成的clientID
+  clientSecret: 7c9795086c79824c4dc2c516d020e05e431addbb    #生成的clientSecret
+  repo: SunJackson.github.io    #仓库名称
+  owner: SunJackson    #github用户名
+  admin: SunJackson
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 #
 
 # 统计
