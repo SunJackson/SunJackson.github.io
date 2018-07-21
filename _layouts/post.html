@@ -63,20 +63,20 @@ layout: default
                 <hr style="visibility: hidden;">
 
                 <ul class="pager">
-                    {% if page.next.url %}
-                    <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
-                           data-placement="top" title="{{page.next.title}}">
-                            Next<br>
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+                           data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                            Previous<br>
                             <span>{{page.next.title}}</span>
                         </a>
                     </li>
                     {% endif %}
-                            {% if page.previous.url %}
-                    <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
-                           data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                            Previous<br>
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip"
+                           data-placement="top" title="{{page.previous.title}}">
+                            Next<br>
                             <span>{{page.previous.title}}</span>
                         </a>
                     </li>
