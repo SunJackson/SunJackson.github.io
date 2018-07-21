@@ -7,7 +7,11 @@ author:     SunJackson
 header-img: img/background1.jpg
 catalog: true
 tags:
-    ('深度学习\n    Deep Learning\n    Github\n    Rank\n    CNN',)
+    - 深度学习
+    - Deep Learning
+    - Github
+    - Rank
+    - CNN
 ---
 
 | Pos1 | Name                                                                                                                 | Description                                                                                                                                                                                                                                                                                        | Language         | Stars Today | Total Stars |
