@@ -7,8 +7,8 @@
 个人简介：
 --
 
-hey,我叫孙嘉嘉（SunJackson），2017年毕业于大连海事大学（本科）智能科学与技术专业。
-现主要从事机器学习相关开发（聚类，归类，预测模型），大数据处理（spark），爬虫工程师（scrapy，scrapy-redis）。
+hey,我叫孙嘉嘉（SunJackson），2017年毕业于[大连海事大学（本科）](https://baike.baidu.com/item/%E5%A4%A7%E8%BF%9E%E6%B5%B7%E4%BA%8B%E5%A4%A7%E5%AD%A6/193123)
+智能科学与技术专业。现主要从事机器学习相关开发（聚类，归类，预测模型），大数据处理（spark），爬虫工程师（scrapy，scrapy-redis）。
 
 工作经历
 --
@@ -34,6 +34,7 @@ hey,我叫孙嘉嘉（SunJackson），2017年毕业于大连海事大学（本�
 
 - 熟练使用机器学习算法，能够独立开发算法模型
 - 熟悉深度学习框架应用
-- 熟悉python开发
-- 熟练使用Scrapy，Scrapy-Redis等爬虫框架
+- 掌握python开发
 - 掌握Spark框架
+- 熟悉java、C语言、MATLAB
+- 熟练使用Scrapy，Scrapy-Redis等爬虫框架
