@@ -11,118 +11,24 @@ header-img: "img/post-bg-rwd.jpg"
     <option value="1"> 英文 English </option>
 </select> -->
 
-
-图像纹理特征总体简述
-==
-
-纹理是一种反映图像中同质现象的视觉特征，它体现了物体表面的具有缓慢变化或者周期性变化的表面结构组织排列属性
-
-纹理具有三大标志：
-
-- 某种局部序列性不断重复
-- 非随机排列
-- 纹理区域内大致为均匀的统一体
-
-
-    不同于灰度、颜色等图像特征，纹理通过像素及其周围空间邻域的灰度分布来表现，即局部纹理信息。另外，局部纹理信息不同程度上的重复性，就是全局纹理信息。
-
-纹理特征体现全局特征的性质的同时，它也描述了图像或图像区域所对应景物的表面性质。但由于纹理只是一种物体表面的特性，并不能完全反映出物体的本质属性，所以仅仅利用纹理特征是无法获得高层次图像内容的。与颜色特征不同，纹理特征不是基于像素点的特征，它需要在包含多个像素点的区域中进行统计计算。在模式匹配中，这种区域性的特征具有较大的优越性，不会由于局部的偏差而无法匹配成功。
-
-在检索具有粗细、疏密等方面较大差别的纹理图像时，利用纹理特征是一种有效的方法。但当纹理之间的粗细、疏密等易于分辨的信息之间相差不大的时候，通常的纹理特征很难准确地反映出人的视觉感觉不同的纹理之间的差别。例如，水中的倒影，光滑的金属面互相反射造成的影响等都会导致纹理的变化。由于这些不是物体本身的特性，因而将纹理信息应用于检索时，有时这些虚假的纹理会对检索造成“误导”。
-
-
-纹理特征的特点
-==
-
-优点：
-
-- 包含多个像素点的区域中进行统计计算
-- 常具有旋转不变性
-- 对于噪声有较强的抵抗能力
-缺点：
-
-- 当图像的分辨率变化的时候，所计算出来的纹理可能会有较大偏差
-- 有可能受到光照、反射情况的影响
-- 从2-D图像中反映出来的纹理不一定是3-D物体表面真实的纹理
-
-常用的特征提取与匹配方法
-==
-
-纹理特征的提取，一般都是通过设定一定大小的窗口，然后从中取得纹理特征。然而窗口的选择，存在着矛盾的要求：
-
-> - 窗口设定大：纹理是一个区域概念，它必须通过空间上的一致性来体现。观察窗口取的越大，能检测出同一性的能力愈强；反之，能力愈弱；
-> - 窗口设定小：由于不同纹理的边界对应于区域纹理同一性的跃变，因此为了准确地定位边界，要求将观察窗口取得小一点；
-这种情况下，会出现困难是：窗口太小，则会在同一种纹理内部出现误分割；而分析窗太大，则会在纹理边界区域出现许多误分割。
-
-特征提取方法
-==
-
 <!-- Chinese Version -->
-<!--<div class="zh post-container">-->
+<div class="zh post-container">
 
-    <!--&lt;!&ndash;copied from markdown &ndash;&gt;-->
-    <!--<blockquote>-->
-        <!--<p>冰冻三尺 非一日之寒<br>积土成山 非斯须之作</p>-->
-    <!--</blockquote>-->
+    <!--copied from markdown -->
+    {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
 
-    <!--<p>Hey，我是<strong>孙嘉嘉(SunJackson)</strong>，爬虫工程师，数据分析师，机器学习工程师。</p>-->
+    <h5>Talks</h5>
 
-    <!--<p>数据分析，机器学习，深度学习，python开发，网络爬虫。</p>-->
-
-    <!--<p>如果有什么问题，欢迎提出探讨~</p>-->
-
-    <!--<p></p>-->
-    <!---->
-    <!--<h5>Talks</h5>-->
-
-    <!--<ul>-->
-        <!--<li><a href="https://github.com">GitHub</a></li>-->
-        <!--<li><a href="http://jekyll.com.cn/">jekyll</a></li>-->
-        <!--<li><a href="https://analytics.google.com/analytics">Google Analytics</a></li>-->
-    <!--</ul>-->
-<!--</div>-->
+    <ul>
+        <li><a href="https://github.com">GitHub</a></li>
+        <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+        <li><a href="https://analytics.google.com/analytics">Google Analytics</a></li>
+    </ul>
+</div>
 
 
 
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
-            window.location.hash = "#en"
-        }
-    }
-
-    // init
-    _render();
-</script>
 
 
 <!-- Gitalk 评论 start  -->
