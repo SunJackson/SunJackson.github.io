@@ -62,8 +62,15 @@
 
         <div class="post-meta">
           <span class="post-subtitle">
+            {% assign beatles = {{ post.subtitle }} | split: "" %}
+
             {% comment %} if page.subtitle {% endcomment %}
+            {% if post.subtitle contains "转载自：" %}
+            <a class="subheading" href="{{ post.subtitle | remove_first: '转载自：' }}">{{ post.subtitle }}</a>
+            {% else %}
             <a class="subheading">{{ post.subtitle }}</a>
+            {% endif %}
+
             {% comment %} endif {% endcomment %}
           </span>
           <br>
