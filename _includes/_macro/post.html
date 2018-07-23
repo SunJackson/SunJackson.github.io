@@ -38,7 +38,11 @@
                 </span>
               {% endif %}
               <a class="post-title-link post-title-link-external" target="_blank" href="{{ post.link }}" itemprop="url">
-                {% if post.title %}{{ post.title }}{% else %}{{  post.link }}{% endif %}
+                {% if post.title %}
+                  {{ post.title }}
+                {% else %}
+                  {{  post.link }}
+                {% endif %}
                 <i class="fa fa-external-link"></i>
               </a>
             {% else %}

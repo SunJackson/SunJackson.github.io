@@ -1629,3 +1629,32 @@ e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-
 162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
 53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
 92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-16-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
+c7e976e4148c386898bae94d62ad21ea	../../jekyll-theme-next/_posts/2018-07/2018-07-23-c7e976e4148c386898bae94d62ad21ea.md	Document worth reading: “Machine Learning and Cognitive Technology for Intelligent Wireless Networks”
+087f689b4ebf34b19980dc142ed8ea22	../../jekyll-theme-next/_posts/2018-07/2018-07-23-087f689b4ebf34b19980dc142ed8ea22.md	If you did not already know
+2fc996353aaa3777ac4c8ec5ac7faffb	../../jekyll-theme-next/_posts/2018-07/2018-07-20-2fc996353aaa3777ac4c8ec5ac7faffb.md	Scalable multi-node deep learning training using GPUs in the AWS Cloud
+447fcaeff28e3c6c9baa72bbd3219b9b	../../jekyll-theme-next/_posts/2018-07/2018-07-22-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
+123a4e2dacb8335fbb913017d5776c04	../../jekyll-theme-next/_posts/2018-07/2018-07-20-123a4e2dacb8335fbb913017d5776c04.md	Classify your own images using Amazon SageMaker
+4206204815b33c96834ca91e68c5173a	../../jekyll-theme-next/_posts/2018-07/2018-07-22-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
+087f689b4ebf34b19980dc142ed8ea22	../../jekyll-theme-next/_posts/2018-07/2018-07-22-087f689b4ebf34b19980dc142ed8ea22.md	If you did not already know
+06e704efdd753681bc8713939ab198eb	../../jekyll-theme-next/_posts/2018-07/2018-07-19-06e704efdd753681bc8713939ab198eb.md	Call an Amazon SageMaker model endpoint using Amazon API Gateway and AWS Lambda
+2428166e4c4d3815affdf113fe20916e	../../jekyll-theme-next/_posts/2018-07/2018-07-18-2428166e4c4d3815affdf113fe20916e.md	Amazon Comprehend now supports Syntax Analysis
+cae9e56f34773d2fb89a27fce818d1dc	../../jekyll-theme-next/_posts/2018-07/2018-07-22-cae9e56f34773d2fb89a27fce818d1dc.md	Document worth reading: “Universal gradient descent”
+ae6917d4f8ef34e1a6d5dcc7ad9b62f7	../../jekyll-theme-next/_posts/2018-07/2018-07-17-ae6917d4f8ef34e1a6d5dcc7ad9b62f7.md	Create a model for predicting orthopedic pathology using Amazon SageMaker
+383c44a673bf3edda593785f08621056	../../jekyll-theme-next/_posts/2018-07/2018-07-17-383c44a673bf3edda593785f08621056.md	How To Remotely Send R and Python Execution to SQL Server from Jupyter Notebooks
+a8cfe8e8504f3b4b92abc4640509687a	../../jekyll-theme-next/_posts/2018-07/2018-07-18-a8cfe8e8504f3b4b92abc4640509687a.md	Basic Statistics in Python: Probability
+a827670dc7543ba4b0c5b54d626f7af1	../../jekyll-theme-next/_posts/2018-07/2018-07-21-a827670dc7543ba4b0c5b54d626f7af1.md	The Real Problems with Neural Machine Translation
+ba2f27e7b85839b38dcd20c95c29c678	../../jekyll-theme-next/_posts/2018-07/2018-07-19-ba2f27e7b85839b38dcd20c95c29c678.md	Analysis: Do the shoes matter in marathon running?
+6493610e69cc39c1b47951b66a398a4d	../../jekyll-theme-next/_posts/2018-07/2018-07-19-6493610e69cc39c1b47951b66a398a4d.md	Learn to R blog series - Operators and Objects
+b26f7228908e31aba3723a2ccff3fad2	../../jekyll-theme-next/_posts/2018-07/2018-07-20-b26f7228908e31aba3723a2ccff3fad2.md	A hex sticker wall, created with R
+187ad0ad484b3d698794d1811ae3692b	../../jekyll-theme-next/_posts/2018-07/2018-07-18-187ad0ad484b3d698794d1811ae3692b.md	Highlights from the useR! 2018 conference in Brisbane
+3fc8dc21e10f3c1f93a3c18cc5c035b6	../../jekyll-theme-next/_posts/2018-07/2018-07-17-3fc8dc21e10f3c1f93a3c18cc5c035b6.md	Video: R for AI, and the Not Hotdog workshop
+1eed6a1f736f3a73a8fcf48dcfbb547f	../../jekyll-theme-next/_posts/2018-07/2018-07-22-1eed6a1f736f3a73a8fcf48dcfbb547f.md	Of statistics class and judo class:  Beyond the paradigm of sequential education
+60057b3e2ad0347d98d365353e7fd652	../../jekyll-theme-next/_posts/2018-07/2018-07-21-60057b3e2ad0347d98d365353e7fd652.md	“A Headline That Will Make Global-Warming Activists Apoplectic”
+0d994f0586d833409d159f0d25ce4a64	../../jekyll-theme-next/_posts/2018-07/2018-07-20-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
+333c94e7d9d7322fa7266458ca23889a	../../jekyll-theme-next/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../jekyll-theme-next/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+8801a400696c3ac3bb31cf469872eede	../../jekyll-theme-next/_posts/2018-07/2018-07-17-8801a400696c3ac3bb31cf469872eede.md	Model Updates: Entity-level Sentiment Analysis and Brand New Entity Extraction Models Now Live in the Text Analysis API
+32428d4d92e93ab8a78a490af5db04a6	../../jekyll-theme-next/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+162b3a7715e533d8a9de2415ac7fdb7f	../../jekyll-theme-next/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../jekyll-theme-next/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+e6f23d80deaf3435840eb7d38a566489	../../jekyll-theme-next/_posts/2018-07/2018-07-22-e6f23d80deaf3435840eb7d38a566489.md	Defining data science in 2018
