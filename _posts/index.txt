@@ -1616,3 +1616,16 @@ f977ebf6cb913f2086bfe1298881ccdd	../../SunJackson.github.io/_posts/2018-07/2018-
 4c3af52ce09839f5ac041a684f693537	../../SunJackson.github.io/_posts/2018-07/2018-07-16-4c3af52ce09839f5ac041a684f693537.md	Beginners Ask “How Many Hidden Layers/Neurons to Use in Artificial Neural Networks?”
 fc86467f5c76370a84f9cbfff76a1cf0	../../SunJackson.github.io/_posts/2018-07/2018-07-16-fc86467f5c76370a84f9cbfff76a1cf0.md	Top Stories, Jul 9-15: Analyze a Soccer (Football) Game Using Tensorflow Object Detection and OpenCV; Does PCA really improve classification outcome?
 >>>>>>> 4ed1ad27a254498f58dde81d5701b2d41598879b
+447fcaeff28e3c6c9baa72bbd3219b9b	../../SunJackson.github.io/_posts/2018-07/2018-07-22-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
+4206204815b33c96834ca91e68c5173a	../../SunJackson.github.io/_posts/2018-07/2018-07-22-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
+cae9e56f34773d2fb89a27fce818d1dc	../../SunJackson.github.io/_posts/2018-07/2018-07-22-cae9e56f34773d2fb89a27fce818d1dc.md	Document worth reading: “Universal gradient descent”
+fb2021d7767f32dd8119c3bfb5f07be4	../../SunJackson.github.io/_posts/2018-07/2018-07-16-fb2021d7767f32dd8119c3bfb5f07be4.md	Scanning Office 365 documents
+1eed6a1f736f3a73a8fcf48dcfbb547f	../../SunJackson.github.io/_posts/2018-07/2018-07-22-1eed6a1f736f3a73a8fcf48dcfbb547f.md	Of statistics class and judo class:  Beyond the paradigm of sequential education
+60057b3e2ad0347d98d365353e7fd652	../../SunJackson.github.io/_posts/2018-07/2018-07-21-60057b3e2ad0347d98d365353e7fd652.md	“A Headline That Will Make Global-Warming Activists Apoplectic”
+0d994f0586d833409d159f0d25ce4a64	../../SunJackson.github.io/_posts/2018-07/2018-07-20-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
+333c94e7d9d7322fa7266458ca23889a	../../SunJackson.github.io/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+32428d4d92e93ab8a78a490af5db04a6	../../SunJackson.github.io/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-16-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
