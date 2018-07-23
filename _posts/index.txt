@@ -1658,3 +1658,4 @@ e5d01c548816370585d4b290a4a4846b	../../jekyll-theme-next/_posts/2018-07/2018-07-
 162b3a7715e533d8a9de2415ac7fdb7f	../../jekyll-theme-next/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
 53586b471ec4314d816676dd35236d9a	../../jekyll-theme-next/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
 e6f23d80deaf3435840eb7d38a566489	../../jekyll-theme-next/_posts/2018-07/2018-07-22-e6f23d80deaf3435840eb7d38a566489.md	Defining data science in 2018
+8c6732317708380597b80faea6ee678c	../../jekyll-theme-next/_posts/2018-07/2018-07-17-8c6732317708380597b80faea6ee678c.md	Why AI Isn’t A Black Box (And Its Business Value)
