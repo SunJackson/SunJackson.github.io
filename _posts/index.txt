@@ -1659,3 +1659,12 @@ e5d01c548816370585d4b290a4a4846b	../../jekyll-theme-next/_posts/2018-07/2018-07-
 53586b471ec4314d816676dd35236d9a	../../jekyll-theme-next/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
 e6f23d80deaf3435840eb7d38a566489	../../jekyll-theme-next/_posts/2018-07/2018-07-22-e6f23d80deaf3435840eb7d38a566489.md	Defining data science in 2018
 8c6732317708380597b80faea6ee678c	../../jekyll-theme-next/_posts/2018-07/2018-07-17-8c6732317708380597b80faea6ee678c.md	Why AI Isn’t A Black Box (And Its Business Value)
+1eed6a1f736f3a73a8fcf48dcfbb547f	../../jekyll-theme-next/_posts/2018-07/2018-07-22-1eed6a1f736f3a73a8fcf48dcfbb547f.md	Of statistics class and judo class:  Beyond the paradigm of sequential education
+60057b3e2ad0347d98d365353e7fd652	../../jekyll-theme-next/_posts/2018-07/2018-07-21-60057b3e2ad0347d98d365353e7fd652.md	“A Headline That Will Make Global-Warming Activists Apoplectic”
+0d994f0586d833409d159f0d25ce4a64	../../jekyll-theme-next/_posts/2018-07/2018-07-20-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
+333c94e7d9d7322fa7266458ca23889a	../../jekyll-theme-next/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../jekyll-theme-next/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+32428d4d92e93ab8a78a490af5db04a6	../../jekyll-theme-next/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+6c7a408fb0343156ba063393dd26be0a	../../jekyll-theme-next/_posts/2018-07/2018-07-17-6c7a408fb0343156ba063393dd26be0a.md	Crawling the internet: data science within a large engineering system
+162b3a7715e533d8a9de2415ac7fdb7f	../../jekyll-theme-next/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../jekyll-theme-next/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?

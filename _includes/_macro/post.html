@@ -61,6 +61,18 @@
         {% endunless %}
 
         <div class="post-meta">
+          <span class="post-subtitle">
+            {% comment %} if page.subtitle {% endcomment %}
+            <a class="subheading">{{ post.subtitle }}</a>
+            {% comment %} endif {% endcomment %}
+          </span>
+          <br>
+          <span class="post-author">
+            {% comment %} if page.author {% endcomment %}
+            <h3 class="author">{{ post.author }}</h3>
+            {% comment %} endif {% endcomment %}
+          </span>
+          <br>
           <span class="post-time">
             {% if site.post_meta.created_at %}
               <span class="post-meta-item-icon">
