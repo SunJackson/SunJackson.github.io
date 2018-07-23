@@ -1439,6 +1439,7 @@ e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-
 c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-16-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
 2fb2999bd5483fd18bce7e15171ae15b	../../SunJackson.github.io/_posts/2018-07/2018-07-14-2fb2999bd5483fd18bce7e15171ae15b.md	What happens to your career when you have to retract a paper?
 8801a400696c3ac3bb31cf469872eede	../../SunJackson.github.io/_posts/2018-07/2018-07-17-8801a400696c3ac3bb31cf469872eede.md	Model Updates: Entity-level Sentiment Analysis and Brand New Entity Extraction Models Now Live in the Text Analysis API
+<<<<<<< HEAD
 4206204815b33c96834ca91e68c5173a	../../SunJackson.github.io/_posts/2018-07/2018-07-20-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
 4333c63261af35219485cfa8ee44cb25	../../SunJackson.github.io/_posts/2018-07/2018-07-20-4333c63261af35219485cfa8ee44cb25.md	Document worth reading: “Does modelling need a Reformation Ideas for a new grammar of modelling”
 447fcaeff28e3c6c9baa72bbd3219b9b	../../SunJackson.github.io/_posts/2018-07/2018-07-20-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
@@ -1487,3 +1488,131 @@ e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-
 92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-16-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
 c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-16-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
 e6f23d80deaf3435840eb7d38a566489	../../SunJackson.github.io/_posts/2018-07/2018-07-22-e6f23d80deaf3435840eb7d38a566489.md	Defining data science in 2018
+=======
+4206204815b33c96834ca91e68c5173a	../../SunJackson.github.io/_posts/2018-07/2018-07-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
+fffeb91f88a0348a8f0647e027275bea	../../SunJackson.github.io/_posts/2018-07/2018-07-fffeb91f88a0348a8f0647e027275bea.md	The Best of AI: New Articles Published This Month (June 2018)
+2c35a57cface30a8a7a09eda53995e53	../../SunJackson.github.io/_posts/2018-07/2018-07-2c35a57cface30a8a7a09eda53995e53.md	Ready your Skills for a Cloud-First World with Google
+de08a11da4a43390b5ff5a097d28155b	../../SunJackson.github.io/_posts/2018-07/2018-07-de08a11da4a43390b5ff5a097d28155b.md	Chaos is needed to keep us smart with Machine Learning
+dd05bcbc41e337f98ac01704e9bd0577	../../SunJackson.github.io/_posts/2018-07/2018-07-dd05bcbc41e337f98ac01704e9bd0577.md	Seattle Insight Data Science: One Year Anniversary!
+ac61110b96c13c509e9ade9b9021982f	../../SunJackson.github.io/_posts/2018-07/2018-07-ac61110b96c13c509e9ade9b9021982f.md	Causation in a Nutshell
+b9ae090683dc38779867495d655cdf1a	../../SunJackson.github.io/_posts/2018-07/2018-07-b9ae090683dc38779867495d655cdf1a.md	Receiver Operating Characteristic Curves Demystified (in Python)
+1049ea0514f332c9ad01fafeff13df6a	../../SunJackson.github.io/_posts/2018-07/2018-07-1049ea0514f332c9ad01fafeff13df6a.md	Charles River Analytics: Software Engineer – Physiological Sensing and Machine Learning
+e1454fb99c3232629f42aef9acc49045	../../SunJackson.github.io/_posts/2018-07/2018-07-e1454fb99c3232629f42aef9acc49045.md	RStudio:addins part 4 – Unit testing coverage investigation and improvement, made easy
+60057b3e2ad0347d98d365353e7fd652	../../SunJackson.github.io/_posts/2018-07/2018-07-60057b3e2ad0347d98d365353e7fd652.md	“A Headline That Will Make Global-Warming Activists Apoplectic”
+b26f7228908e31aba3723a2ccff3fad2	../../SunJackson.github.io/_posts/2018-07/2018-07-b26f7228908e31aba3723a2ccff3fad2.md	A hex sticker wall, created with R
+0d994f0586d833409d159f0d25ce4a64	../../SunJackson.github.io/_posts/2018-07/2018-07-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
+39b17b75a5753971a27dfdffcf691f8e	../../SunJackson.github.io/_posts/2018-07/2018-07-39b17b75a5753971a27dfdffcf691f8e.md	Charles River Analytics: Full Stack Software Engineer
+90045811028539a48758c3065b42a48d	../../SunJackson.github.io/_posts/2018-07/2018-07-90045811028539a48758c3065b42a48d.md	R.devices – Into the Void
+dd659195aba13521b6901d12c0c06c2b	../../SunJackson.github.io/_posts/2018-07/2018-07-dd659195aba13521b6901d12c0c06c2b.md	CSJob: PhD and Postdoc positions KU Leuven: Optimization frameworks for deep kernel machines
+fb2021d7767f32dd8119c3bfb5f07be4	../../SunJackson.github.io/_posts/2018-07/2018-07-fb2021d7767f32dd8119c3bfb5f07be4.md	Scanning Office 365 documents
+333c94e7d9d7322fa7266458ca23889a	../../SunJackson.github.io/_posts/2018-07/2018-07-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+5af068835a7339a7bce364490b4fcfa9	../../SunJackson.github.io/_posts/2018-07/2018-07-5af068835a7339a7bce364490b4fcfa9.md	Charles River Analytics: Software Engineer III – React.js Developer for Streaming Data Visualization
+6c7a408fb0343156ba063393dd26be0a	../../SunJackson.github.io/_posts/2018-07/2018-07-6c7a408fb0343156ba063393dd26be0a.md	Crawling the internet: data science within a large engineering system
+3bbac92ecfb53f01b70d578e4ef04171	../../SunJackson.github.io/_posts/2018-07/2018-07-3bbac92ecfb53f01b70d578e4ef04171.md	Regional population structures at a glance
+e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-07-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+fb69c031cb6e33278a1af7252afb924e	../../SunJackson.github.io/_posts/2018-07/2018-07-fb69c031cb6e33278a1af7252afb924e.md	Products for Product People: Best Practices in Analytics, July 24 Webinar
+b26f7228908e31aba3723a2ccff3fad2	../../SunJackson.github.io/_posts/2018-07/2018-07-b26f7228908e31aba3723a2ccff3fad2.md	A hex sticker wall, created with R
+32428d4d92e93ab8a78a490af5db04a6	../../SunJackson.github.io/_posts/2018-07/2018-07-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+1050f8ecdaea3665a3358cf9c79ff535	../../SunJackson.github.io/_posts/2018-07/2018-07-1050f8ecdaea3665a3358cf9c79ff535.md	Yet another list of things we can do to have more diverse sets of invited speakers
+162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+0693a6fe4f4f326dbb281521d15d0bf2	../../SunJackson.github.io/_posts/2018-07/2018-07-0693a6fe4f4f326dbb281521d15d0bf2.md	A new ‘boto3’ Amazon Athena client wrapper with dplyr async query support
+62da1c1d4dfd3c329e6dd18bc82b1e95	../../SunJackson.github.io/_posts/2018-07/2018-07-62da1c1d4dfd3c329e6dd18bc82b1e95.md	compstak: Jr Data Analyst
+92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
+6d3370a4e7183f999fae202de12b84a2	../../SunJackson.github.io/_posts/2018-07/2018-07-6d3370a4e7183f999fae202de12b84a2.md	R trainings and data science talks in Stuttgart: save 10% with our summer special
+c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
+372a1ebf492b3a0e970587d68b4a292f	../../SunJackson.github.io/_posts/2018-07/2018-07-372a1ebf492b3a0e970587d68b4a292f.md	The ultimate list of Web Scraping tools and software
+639bffddbd323f9c831592fbfc7cd5df	../../SunJackson.github.io/_posts/2018-07/2018-07-639bffddbd323f9c831592fbfc7cd5df.md	Best (and Free!!) Resources to Understand Nuts and Bolts of Deep Learning
+1e72f230079a3bdb878951b3c3fb7673	../../SunJackson.github.io/_posts/2018-07/2018-07-1e72f230079a3bdb878951b3c3fb7673.md	Benchmarking Feature Selection Algorithms with Xy()
+6aaa6b9a7e5338b5abb40e323c9c3969	../../SunJackson.github.io/_posts/2018-07/2018-07-6aaa6b9a7e5338b5abb40e323c9c3969.md	Charles River Analytics: Software Engineer II – React.js Developer for Streaming Data Visualization
+3c74e03efe3c337b9bb2d7c5d1afb5fe	../../SunJackson.github.io/_posts/2018-07/2018-07-3c74e03efe3c337b9bb2d7c5d1afb5fe.md	CVXR: A Direct Standardization Example
+889e28dcea1a3a86be5a948bd6e0120d	../../SunJackson.github.io/_posts/2018-07/2018-07-889e28dcea1a3a86be5a948bd6e0120d.md	Charles River Analytics: Sr Software Engineer – Intelligent Systems
+a2c78e9d89c630b4993fc4b6f22e7df6	../../SunJackson.github.io/_posts/2018-07/2018-07-a2c78e9d89c630b4993fc4b6f22e7df6.md	Explaining the 68-95-99.7 rule for a Normal Distribution
+7d257b03768e3e2aaf3db4c6ece2c7fa	../../SunJackson.github.io/_posts/2018-07/2018-07-7d257b03768e3e2aaf3db4c6ece2c7fa.md	Charles River Analytics: Software Engineer II – Intelligent Systems
+82a993e91fef3bf4b6e7139b6e931702	../../SunJackson.github.io/_posts/2018-07/2018-07-82a993e91fef3bf4b6e7139b6e931702.md	Math for Machine Learning: Open Doors to Data Science and Artificial Intelligence
+37d8718073de3593bb3c99ed6ecd9845	../../SunJackson.github.io/_posts/2018-07/2018-07-37d8718073de3593bb3c99ed6ecd9845.md	OpenCV Tutorial: A Guide to Learn OpenCV
+f33120fae909305a891e9b6239b15bb7	../../SunJackson.github.io/_posts/2018-07/2018-07-f33120fae909305a891e9b6239b15bb7.md	Top KDnuggets tweets, Jul 11-17: Foundations of Machine Learning – A Bloomberg course; The 5 Clustering Algorithms Data Scientists Need to Know
+0351d965e2f934e588ba521880ed39db	../../SunJackson.github.io/_posts/2018-07/2018-07-0351d965e2f934e588ba521880ed39db.md	Efficient Graph-based Word Sense Induction
+12d280b2a952337e9de47dd0a63285ac	../../SunJackson.github.io/_posts/2018-07/2018-07-12d280b2a952337e9de47dd0a63285ac.md	5 Quick and Easy Data Visualizations in Python with Code
+bc7f5711a536335c87c9b0a92337a848	../../SunJackson.github.io/_posts/2018-07/2018-07-bc7f5711a536335c87c9b0a92337a848.md	Clustering Using K-means Algorithm
+df6526ff37c23a7cafbf2da7380a491f	../../SunJackson.github.io/_posts/2018-07/2018-07-df6526ff37c23a7cafbf2da7380a491f.md	Charles River Analytics: Software Engineer I – Intelligent Systems
+ef010ecf94a230c7ac03f5de6ebeefe8	../../SunJackson.github.io/_posts/2018-07/2018-07-ef010ecf94a230c7ac03f5de6ebeefe8.md	Charles River Analytics: Software Engineer III – Cesium.js Developer
+9f12687222603eeb95b8ebcfdbc2ec9d	../../SunJackson.github.io/_posts/2018-07/2018-07-9f12687222603eeb95b8ebcfdbc2ec9d.md	OpenCV Saliency Detection
+f2c27006c4003cafafe94b9f3da1b8a0	../../SunJackson.github.io/_posts/2018-07/2018-07-f2c27006c4003cafafe94b9f3da1b8a0.md	Charles River Analytics: Software Engineer III – AI Engineer
+aa93a7ff3ee73fae87d94a4a15afb0e8	../../SunJackson.github.io/_posts/2018-07/2018-07-aa93a7ff3ee73fae87d94a4a15afb0e8.md	KDnuggets™ News 18:n27, Jul 18: Data Scientist was the sexiest job until…; Text Mining on the Command Line; Does PCA Really Work?
+4c22c7288e4e3b71bb5712637b31535d	../../SunJackson.github.io/_posts/2018-07/2018-07-4c22c7288e4e3b71bb5712637b31535d.md	NYU Stern MS in Business Analytics – Apply Now
+acf8b93ebbd135d18f4c0f97cc9f7a80	../../SunJackson.github.io/_posts/2018-07/2018-07-acf8b93ebbd135d18f4c0f97cc9f7a80.md	Charles River Analytics: Software Engineer – Human Machine Interface Design
+a383b3bc26683e99ae38de17c7dd1bfa	../../SunJackson.github.io/_posts/2018-07/2018-07-a383b3bc26683e99ae38de17c7dd1bfa.md	Charles River Analytics: Software Engineer
+69fe2ace2c9d365e9eacac9480632b4e	../../SunJackson.github.io/_posts/2018-07/2018-07-69fe2ace2c9d365e9eacac9480632b4e.md	Choosing the Right Marketing Technology Stack, July 25 Webinar
+efa2c1c4777d322a94eee11c6a9aa129	../../SunJackson.github.io/_posts/2018-07/2018-07-efa2c1c4777d322a94eee11c6a9aa129.md	Basic Image Data Analysis Using Numpy and OpenCV, Part 2
+9aeabb9e57bd36208134e6879a9d8ddf	../../SunJackson.github.io/_posts/2018-07/2018-07-9aeabb9e57bd36208134e6879a9d8ddf.md	BigQuery vs Redshift: Pricing Strategy
+fcbc837db9cb39139ee41128422757fa	../../SunJackson.github.io/_posts/2018-07/2018-07-fcbc837db9cb39139ee41128422757fa.md	fast.ai Deep Learning Part 2 Complete Course Notes
+98cd4477ab123a20a5a89f7ad4fd4db9	../../SunJackson.github.io/_posts/2018-07/2018-07-98cd4477ab123a20a5a89f7ad4fd4db9.md	Learn cutting edge techniques from world-class data scientists – RapidMiner Wisdom
+f977ebf6cb913f2086bfe1298881ccdd	../../SunJackson.github.io/_posts/2018-07/2018-07-f977ebf6cb913f2086bfe1298881ccdd.md	Key Takeaways from the Strata San Jose 2018
+0cec12f5949b38ff91d5a605da00c790	../../SunJackson.github.io/_posts/2018-07/2018-07-0cec12f5949b38ff91d5a605da00c790.md	Beating the 4-Year Slump: Mid-Career Growth in Data Science
+4c3af52ce09839f5ac041a684f693537	../../SunJackson.github.io/_posts/2018-07/2018-07-4c3af52ce09839f5ac041a684f693537.md	Beginners Ask “How Many Hidden Layers/Neurons to Use in Artificial Neural Networks?”
+fc86467f5c76370a84f9cbfff76a1cf0	../../SunJackson.github.io/_posts/2018-07/2018-07-fc86467f5c76370a84f9cbfff76a1cf0.md	Top Stories, Jul 9-15: Analyze a Soccer (Football) Game Using Tensorflow Object Detection and OpenCV; Does PCA really improve classification outcome?
+4206204815b33c96834ca91e68c5173a	../../SunJackson.github.io/_posts/2018-07/2018-07-21-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
+fffeb91f88a0348a8f0647e027275bea	../../SunJackson.github.io/_posts/2018-07/2018-07-17-fffeb91f88a0348a8f0647e027275bea.md	The Best of AI: New Articles Published This Month (June 2018)
+2c35a57cface30a8a7a09eda53995e53	../../SunJackson.github.io/_posts/2018-07/2018-07-20-2c35a57cface30a8a7a09eda53995e53.md	Ready your Skills for a Cloud-First World with Google
+de08a11da4a43390b5ff5a097d28155b	../../SunJackson.github.io/_posts/2018-07/2018-07-20-de08a11da4a43390b5ff5a097d28155b.md	Chaos is needed to keep us smart with Machine Learning
+dd05bcbc41e337f98ac01704e9bd0577	../../SunJackson.github.io/_posts/2018-07/2018-07-18-dd05bcbc41e337f98ac01704e9bd0577.md	Seattle Insight Data Science: One Year Anniversary!
+ac61110b96c13c509e9ade9b9021982f	../../SunJackson.github.io/_posts/2018-07/2018-07-20-ac61110b96c13c509e9ade9b9021982f.md	Causation in a Nutshell
+e1454fb99c3232629f42aef9acc49045	../../SunJackson.github.io/_posts/2018-07/2018-07-21-e1454fb99c3232629f42aef9acc49045.md	RStudio:addins part 4 – Unit testing coverage investigation and improvement, made easy
+b26f7228908e31aba3723a2ccff3fad2	../../SunJackson.github.io/_posts/2018-07/2018-07-20-b26f7228908e31aba3723a2ccff3fad2.md	A hex sticker wall, created with R
+b9ae090683dc38779867495d655cdf1a	../../SunJackson.github.io/_posts/2018-07/2018-07-20-b9ae090683dc38779867495d655cdf1a.md	Receiver Operating Characteristic Curves Demystified (in Python)
+90045811028539a48758c3065b42a48d	../../SunJackson.github.io/_posts/2018-07/2018-07-21-90045811028539a48758c3065b42a48d.md	R.devices – Into the Void
+60057b3e2ad0347d98d365353e7fd652	../../SunJackson.github.io/_posts/2018-07/2018-07-21-60057b3e2ad0347d98d365353e7fd652.md	“A Headline That Will Make Global-Warming Activists Apoplectic”
+1049ea0514f332c9ad01fafeff13df6a	../../SunJackson.github.io/_posts/2018-07/2018-07-20-1049ea0514f332c9ad01fafeff13df6a.md	Charles River Analytics: Software Engineer – Physiological Sensing and Machine Learning
+0d994f0586d833409d159f0d25ce4a64	../../SunJackson.github.io/_posts/2018-07/2018-07-20-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
+6c7a408fb0343156ba063393dd26be0a	../../SunJackson.github.io/_posts/2018-07/2018-07-17-6c7a408fb0343156ba063393dd26be0a.md	Crawling the internet: data science within a large engineering system
+fb2021d7767f32dd8119c3bfb5f07be4	../../SunJackson.github.io/_posts/2018-07/2018-07-16-fb2021d7767f32dd8119c3bfb5f07be4.md	Scanning Office 365 documents
+1050f8ecdaea3665a3358cf9c79ff535	../../SunJackson.github.io/_posts/2018-07/2018-07-16-1050f8ecdaea3665a3358cf9c79ff535.md	Yet another list of things we can do to have more diverse sets of invited speakers
+dd659195aba13521b6901d12c0c06c2b	../../SunJackson.github.io/_posts/2018-07/2018-07-19-dd659195aba13521b6901d12c0c06c2b.md	CSJob: PhD and Postdoc positions KU Leuven: Optimization frameworks for deep kernel machines
+39b17b75a5753971a27dfdffcf691f8e	../../SunJackson.github.io/_posts/2018-07/2018-07-20-39b17b75a5753971a27dfdffcf691f8e.md	Charles River Analytics: Full Stack Software Engineer
+3bbac92ecfb53f01b70d578e4ef04171	../../SunJackson.github.io/_posts/2018-07/2018-07-21-3bbac92ecfb53f01b70d578e4ef04171.md	Regional population structures at a glance
+333c94e7d9d7322fa7266458ca23889a	../../SunJackson.github.io/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+5af068835a7339a7bce364490b4fcfa9	../../SunJackson.github.io/_posts/2018-07/2018-07-20-5af068835a7339a7bce364490b4fcfa9.md	Charles River Analytics: Software Engineer III – React.js Developer for Streaming Data Visualization
+b26f7228908e31aba3723a2ccff3fad2	../../SunJackson.github.io/_posts/2018-07/2018-07-20-b26f7228908e31aba3723a2ccff3fad2.md	A hex sticker wall, created with R
+32428d4d92e93ab8a78a490af5db04a6	../../SunJackson.github.io/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+fb69c031cb6e33278a1af7252afb924e	../../SunJackson.github.io/_posts/2018-07/2018-07-19-fb69c031cb6e33278a1af7252afb924e.md	Products for Product People: Best Practices in Analytics, July 24 Webinar
+162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+0693a6fe4f4f326dbb281521d15d0bf2	../../SunJackson.github.io/_posts/2018-07/2018-07-20-0693a6fe4f4f326dbb281521d15d0bf2.md	A new ‘boto3’ Amazon Athena client wrapper with dplyr async query support
+53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-16-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
+62da1c1d4dfd3c329e6dd18bc82b1e95	../../SunJackson.github.io/_posts/2018-07/2018-07-19-62da1c1d4dfd3c329e6dd18bc82b1e95.md	compstak: Jr Data Analyst
+c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-16-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
+6d3370a4e7183f999fae202de12b84a2	../../SunJackson.github.io/_posts/2018-07/2018-07-20-6d3370a4e7183f999fae202de12b84a2.md	R trainings and data science talks in Stuttgart: save 10% with our summer special
+372a1ebf492b3a0e970587d68b4a292f	../../SunJackson.github.io/_posts/2018-07/2018-07-19-372a1ebf492b3a0e970587d68b4a292f.md	The ultimate list of Web Scraping tools and software
+639bffddbd323f9c831592fbfc7cd5df	../../SunJackson.github.io/_posts/2018-07/2018-07-19-639bffddbd323f9c831592fbfc7cd5df.md	Best (and Free!!) Resources to Understand Nuts and Bolts of Deep Learning
+1e72f230079a3bdb878951b3c3fb7673	../../SunJackson.github.io/_posts/2018-07/2018-07-20-1e72f230079a3bdb878951b3c3fb7673.md	Benchmarking Feature Selection Algorithms with Xy()
+6aaa6b9a7e5338b5abb40e323c9c3969	../../SunJackson.github.io/_posts/2018-07/2018-07-19-6aaa6b9a7e5338b5abb40e323c9c3969.md	Charles River Analytics: Software Engineer II – React.js Developer for Streaming Data Visualization
+3c74e03efe3c337b9bb2d7c5d1afb5fe	../../SunJackson.github.io/_posts/2018-07/2018-07-20-3c74e03efe3c337b9bb2d7c5d1afb5fe.md	CVXR: A Direct Standardization Example
+889e28dcea1a3a86be5a948bd6e0120d	../../SunJackson.github.io/_posts/2018-07/2018-07-19-889e28dcea1a3a86be5a948bd6e0120d.md	Charles River Analytics: Sr Software Engineer – Intelligent Systems
+a2c78e9d89c630b4993fc4b6f22e7df6	../../SunJackson.github.io/_posts/2018-07/2018-07-19-a2c78e9d89c630b4993fc4b6f22e7df6.md	Explaining the 68-95-99.7 rule for a Normal Distribution
+7d257b03768e3e2aaf3db4c6ece2c7fa	../../SunJackson.github.io/_posts/2018-07/2018-07-19-7d257b03768e3e2aaf3db4c6ece2c7fa.md	Charles River Analytics: Software Engineer II – Intelligent Systems
+82a993e91fef3bf4b6e7139b6e931702	../../SunJackson.github.io/_posts/2018-07/2018-07-18-82a993e91fef3bf4b6e7139b6e931702.md	Math for Machine Learning: Open Doors to Data Science and Artificial Intelligence
+37d8718073de3593bb3c99ed6ecd9845	../../SunJackson.github.io/_posts/2018-07/2018-07-19-37d8718073de3593bb3c99ed6ecd9845.md	OpenCV Tutorial: A Guide to Learn OpenCV
+f33120fae909305a891e9b6239b15bb7	../../SunJackson.github.io/_posts/2018-07/2018-07-18-f33120fae909305a891e9b6239b15bb7.md	Top KDnuggets tweets, Jul 11-17: Foundations of Machine Learning – A Bloomberg course; The 5 Clustering Algorithms Data Scientists Need to Know
+0351d965e2f934e588ba521880ed39db	../../SunJackson.github.io/_posts/2018-07/2018-07-18-0351d965e2f934e588ba521880ed39db.md	Efficient Graph-based Word Sense Induction
+12d280b2a952337e9de47dd0a63285ac	../../SunJackson.github.io/_posts/2018-07/2018-07-18-12d280b2a952337e9de47dd0a63285ac.md	5 Quick and Easy Data Visualizations in Python with Code
+bc7f5711a536335c87c9b0a92337a848	../../SunJackson.github.io/_posts/2018-07/2018-07-18-bc7f5711a536335c87c9b0a92337a848.md	Clustering Using K-means Algorithm
+df6526ff37c23a7cafbf2da7380a491f	../../SunJackson.github.io/_posts/2018-07/2018-07-18-df6526ff37c23a7cafbf2da7380a491f.md	Charles River Analytics: Software Engineer I – Intelligent Systems
+ef010ecf94a230c7ac03f5de6ebeefe8	../../SunJackson.github.io/_posts/2018-07/2018-07-18-ef010ecf94a230c7ac03f5de6ebeefe8.md	Charles River Analytics: Software Engineer III – Cesium.js Developer
+f2c27006c4003cafafe94b9f3da1b8a0	../../SunJackson.github.io/_posts/2018-07/2018-07-18-f2c27006c4003cafafe94b9f3da1b8a0.md	Charles River Analytics: Software Engineer III – AI Engineer
+9f12687222603eeb95b8ebcfdbc2ec9d	../../SunJackson.github.io/_posts/2018-07/2018-07-16-9f12687222603eeb95b8ebcfdbc2ec9d.md	OpenCV Saliency Detection
+aa93a7ff3ee73fae87d94a4a15afb0e8	../../SunJackson.github.io/_posts/2018-07/2018-07-18-aa93a7ff3ee73fae87d94a4a15afb0e8.md	KDnuggets™ News 18:n27, Jul 18: Data Scientist was the sexiest job until…; Text Mining on the Command Line; Does PCA Really Work?
+4c22c7288e4e3b71bb5712637b31535d	../../SunJackson.github.io/_posts/2018-07/2018-07-17-4c22c7288e4e3b71bb5712637b31535d.md	NYU Stern MS in Business Analytics – Apply Now
+acf8b93ebbd135d18f4c0f97cc9f7a80	../../SunJackson.github.io/_posts/2018-07/2018-07-17-acf8b93ebbd135d18f4c0f97cc9f7a80.md	Charles River Analytics: Software Engineer – Human Machine Interface Design
+a383b3bc26683e99ae38de17c7dd1bfa	../../SunJackson.github.io/_posts/2018-07/2018-07-17-a383b3bc26683e99ae38de17c7dd1bfa.md	Charles River Analytics: Software Engineer
+69fe2ace2c9d365e9eacac9480632b4e	../../SunJackson.github.io/_posts/2018-07/2018-07-17-69fe2ace2c9d365e9eacac9480632b4e.md	Choosing the Right Marketing Technology Stack, July 25 Webinar
+efa2c1c4777d322a94eee11c6a9aa129	../../SunJackson.github.io/_posts/2018-07/2018-07-17-efa2c1c4777d322a94eee11c6a9aa129.md	Basic Image Data Analysis Using Numpy and OpenCV, Part 2
+9aeabb9e57bd36208134e6879a9d8ddf	../../SunJackson.github.io/_posts/2018-07/2018-07-17-9aeabb9e57bd36208134e6879a9d8ddf.md	BigQuery vs Redshift: Pricing Strategy
+fcbc837db9cb39139ee41128422757fa	../../SunJackson.github.io/_posts/2018-07/2018-07-17-fcbc837db9cb39139ee41128422757fa.md	fast.ai Deep Learning Part 2 Complete Course Notes
+98cd4477ab123a20a5a89f7ad4fd4db9	../../SunJackson.github.io/_posts/2018-07/2018-07-16-98cd4477ab123a20a5a89f7ad4fd4db9.md	Learn cutting edge techniques from world-class data scientists – RapidMiner Wisdom
+f977ebf6cb913f2086bfe1298881ccdd	../../SunJackson.github.io/_posts/2018-07/2018-07-16-f977ebf6cb913f2086bfe1298881ccdd.md	Key Takeaways from the Strata San Jose 2018
+0cec12f5949b38ff91d5a605da00c790	../../SunJackson.github.io/_posts/2018-07/2018-07-16-0cec12f5949b38ff91d5a605da00c790.md	Beating the 4-Year Slump: Mid-Career Growth in Data Science
+4c3af52ce09839f5ac041a684f693537	../../SunJackson.github.io/_posts/2018-07/2018-07-16-4c3af52ce09839f5ac041a684f693537.md	Beginners Ask “How Many Hidden Layers/Neurons to Use in Artificial Neural Networks?”
+fc86467f5c76370a84f9cbfff76a1cf0	../../SunJackson.github.io/_posts/2018-07/2018-07-16-fc86467f5c76370a84f9cbfff76a1cf0.md	Top Stories, Jul 9-15: Analyze a Soccer (Football) Game Using Tensorflow Object Detection and OpenCV; Does PCA really improve classification outcome?
+>>>>>>> 4ed1ad27a254498f58dde81d5701b2d41598879b
