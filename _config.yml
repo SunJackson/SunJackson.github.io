@@ -417,7 +417,7 @@ changyan:
 # Support for gitalk comments system.
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   githubID: SunJackson
   clientID: 911bd130e19662f0bfb2                            #生成的clientID
   clientSecret: 7c9795086c79824c4dc2c516d020e05e431addbb    #生成的clientSecret
