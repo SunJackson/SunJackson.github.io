@@ -1439,3 +1439,51 @@ e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-
 c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-16-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
 2fb2999bd5483fd18bce7e15171ae15b	../../SunJackson.github.io/_posts/2018-07/2018-07-14-2fb2999bd5483fd18bce7e15171ae15b.md	What happens to your career when you have to retract a paper?
 8801a400696c3ac3bb31cf469872eede	../../SunJackson.github.io/_posts/2018-07/2018-07-17-8801a400696c3ac3bb31cf469872eede.md	Model Updates: Entity-level Sentiment Analysis and Brand New Entity Extraction Models Now Live in the Text Analysis API
+4206204815b33c96834ca91e68c5173a	../../SunJackson.github.io/_posts/2018-07/2018-07-20-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
+4333c63261af35219485cfa8ee44cb25	../../SunJackson.github.io/_posts/2018-07/2018-07-20-4333c63261af35219485cfa8ee44cb25.md	Document worth reading: “Does modelling need a Reformation Ideas for a new grammar of modelling”
+447fcaeff28e3c6c9baa72bbd3219b9b	../../SunJackson.github.io/_posts/2018-07/2018-07-20-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
+1f7d1f41e8593082bd06ca2c53645e7c	../../SunJackson.github.io/_posts/2018-07/2018-07-19-1f7d1f41e8593082bd06ca2c53645e7c.md	Whats new on arXiv
+087f689b4ebf34b19980dc142ed8ea22	../../SunJackson.github.io/_posts/2018-07/2018-07-19-087f689b4ebf34b19980dc142ed8ea22.md	If you did not already know
+447fcaeff28e3c6c9baa72bbd3219b9b	../../SunJackson.github.io/_posts/2018-07/2018-07-19-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
+a31a16d43dc234938e9292c61a530af4	../../SunJackson.github.io/_posts/2018-07/2018-07-16-a31a16d43dc234938e9292c61a530af4.md	Import AI: #103: Testing brain-like alternatives to backpropagation, why imagining goals can lead to better robots, and why navigating cities is a useful research avenue for AI
+fb2021d7767f32dd8119c3bfb5f07be4	../../SunJackson.github.io/_posts/2018-07/2018-07-16-fb2021d7767f32dd8119c3bfb5f07be4.md	Scanning Office 365 documents
+333c94e7d9d7322fa7266458ca23889a	../../SunJackson.github.io/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+32428d4d92e93ab8a78a490af5db04a6	../../SunJackson.github.io/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-16-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
+c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-16-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
+2fb2999bd5483fd18bce7e15171ae15b	../../SunJackson.github.io/_posts/2018-07/2018-07-14-2fb2999bd5483fd18bce7e15171ae15b.md	What happens to your career when you have to retract a paper?
+1f7d1f41e8593082bd06ca2c53645e7c	../../SunJackson.github.io/_posts/2018-07/2018-07-21-1f7d1f41e8593082bd06ca2c53645e7c.md	Whats new on arXiv
+c63a034726e138cfb0ab20509d71e5e6	../../SunJackson.github.io/_posts/2018-07/2018-07-21-c63a034726e138cfb0ab20509d71e5e6.md	Magister Dixit
+087f689b4ebf34b19980dc142ed8ea22	../../SunJackson.github.io/_posts/2018-07/2018-07-20-087f689b4ebf34b19980dc142ed8ea22.md	If you did not already know
+2fc996353aaa3777ac4c8ec5ac7faffb	../../SunJackson.github.io/_posts/2018-07/2018-07-20-2fc996353aaa3777ac4c8ec5ac7faffb.md	Scalable multi-node deep learning training using GPUs in the AWS Cloud
+447fcaeff28e3c6c9baa72bbd3219b9b	../../SunJackson.github.io/_posts/2018-07/2018-07-20-447fcaeff28e3c6c9baa72bbd3219b9b.md	Distilled News
+123a4e2dacb8335fbb913017d5776c04	../../SunJackson.github.io/_posts/2018-07/2018-07-20-123a4e2dacb8335fbb913017d5776c04.md	Classify your own images using Amazon SageMaker
+49e3bf7502d43086ba3318ee1e7492e4	../../SunJackson.github.io/_posts/2018-07/2018-07-20-49e3bf7502d43086ba3318ee1e7492e4.md	Document worth reading: “Optimization Methods for Supervised Machine Learning: From Linear Models to Deep Learning”
+18c5a586d6303d75b850402f0bc8c8a4	../../SunJackson.github.io/_posts/2018-07/2018-07-16-18c5a586d6303d75b850402f0bc8c8a4.md	Verlet Simulations
+a827670dc7543ba4b0c5b54d626f7af1	../../SunJackson.github.io/_posts/2018-07/2018-07-21-a827670dc7543ba4b0c5b54d626f7af1.md	The Real Problems with Neural Machine Translation
+b26f7228908e31aba3723a2ccff3fad2	../../SunJackson.github.io/_posts/2018-07/2018-07-20-b26f7228908e31aba3723a2ccff3fad2.md	A hex sticker wall, created with R
+fb2021d7767f32dd8119c3bfb5f07be4	../../SunJackson.github.io/_posts/2018-07/2018-07-16-fb2021d7767f32dd8119c3bfb5f07be4.md	Scanning Office 365 documents
+0d994f0586d833409d159f0d25ce4a64	../../SunJackson.github.io/_posts/2018-07/2018-07-20-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
+333c94e7d9d7322fa7266458ca23889a	../../SunJackson.github.io/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+32428d4d92e93ab8a78a490af5db04a6	../../SunJackson.github.io/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-16-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
+c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-16-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
+087f689b4ebf34b19980dc142ed8ea22	../../SunJackson.github.io/_posts/2018-07/2018-07-22-087f689b4ebf34b19980dc142ed8ea22.md	If you did not already know
+4206204815b33c96834ca91e68c5173a	../../SunJackson.github.io/_posts/2018-07/2018-07-21-4206204815b33c96834ca91e68c5173a.md	R Packages worth a look
+fb2021d7767f32dd8119c3bfb5f07be4	../../SunJackson.github.io/_posts/2018-07/2018-07-16-fb2021d7767f32dd8119c3bfb5f07be4.md	Scanning Office 365 documents
+60057b3e2ad0347d98d365353e7fd652	../../SunJackson.github.io/_posts/2018-07/2018-07-21-60057b3e2ad0347d98d365353e7fd652.md	“A Headline That Will Make Global-Warming Activists Apoplectic”
+0d994f0586d833409d159f0d25ce4a64	../../SunJackson.github.io/_posts/2018-07/2018-07-20-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
+333c94e7d9d7322fa7266458ca23889a	../../SunJackson.github.io/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
+e5d01c548816370585d4b290a4a4846b	../../SunJackson.github.io/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
+32428d4d92e93ab8a78a490af5db04a6	../../SunJackson.github.io/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
+162b3a7715e533d8a9de2415ac7fdb7f	../../SunJackson.github.io/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+53586b471ec4314d816676dd35236d9a	../../SunJackson.github.io/_posts/2018-07/2018-07-17-53586b471ec4314d816676dd35236d9a.md	The statistical checklist:  Could there be a list of guidelines to help analysts do better work?
+92310be96efd30beba0cb630f5ced5f2	../../SunJackson.github.io/_posts/2018-07/2018-07-16-92310be96efd30beba0cb630f5ced5f2.md	The “Carl Sagan effect”
+c35049c44f3b3752b2bb41421063c030	../../SunJackson.github.io/_posts/2018-07/2018-07-16-c35049c44f3b3752b2bb41421063c030.md	Mister P wins again
+e6f23d80deaf3435840eb7d38a566489	../../SunJackson.github.io/_posts/2018-07/2018-07-22-e6f23d80deaf3435840eb7d38a566489.md	Defining data science in 2018
