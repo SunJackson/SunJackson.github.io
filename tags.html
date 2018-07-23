@@ -27,8 +27,9 @@ lang: zh
             <!-- 标签云 -->
 			<div id='tag_cloud' class="tags">
 				{% for tag in site.tags %}
-
+				{% if tag[1].size > site.featured-condition-size %}
 				<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+				{% endif %}
 				{% endfor %}
 			</div>
 

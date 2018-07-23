@@ -1,0 +1,6204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Every failure is leading towards success.">
+    <meta name="keywords"  content="Data Science, 机器学习， 数据分析，R">
+    <meta name="theme-color" content="#000000">
+    
+    <title>OpenCV Saliency Detection - Jackson's Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Safari Webpage Icon    by-BY -->
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2018/07/16/9f12687222603eeb95b8ebcfdbc2ec9d/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">SunJackson Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About Me</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/background2.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/background2.jpg')
+    }
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#lines" title="lines">lines</a>
+                        
+                        <a class="tag" href="/tags/#https" title="https">https</a>
+                        
+                        <a class="tag" href="/tags/#image processing" title="image processing">image processing</a>
+                        
+                        <a class="tag" href="/tags/#objects" title="objects">objects</a>
+                        
+                        <a class="tag" href="/tags/#objectness" title="objectness">objectness</a>
+                        
+                        <a class="tag" href="/tags/#detecting" title="detecting">detecting</a>
+                        
+                        <a class="tag" href="/tags/#model" title="model">model</a>
+                        
+                        <a class="tag" href="/tags/#â regions" title="â regions">â regions</a>
+                        
+                        <a class="tag" href="/tags/#frames" title="frames">frames</a>
+                        
+                        <a class="tag" href="/tags/#imports" title="imports">imports</a>
+                        
+                        <a class="tag" href="/tags/#saliencymap" title="saliencymap">saliencymap</a>
+                        
+                        <a class="tag" href="/tags/#methods" title="methods">methods</a>
+                        
+                        <a class="tag" href="/tags/#computationally" title="computationally">computationally</a>
+                        
+                        <a class="tag" href="/tags/#computing" title="computing">computing</a>
+                        
+                        <a class="tag" href="/tags/#computed" title="computed">computed</a>
+                        
+                        <a class="tag" href="/tags/#computes" title="computes">computes</a>
+                        
+                        <a class="tag" href="/tags/#algorithms" title="algorithms">algorithms</a>
+                        
+                        <a class="tag" href="/tags/#python" title="python">python</a>
+                        
+                        <a class="tag" href="/tags/#detectors" title="detectors">detectors</a>
+                        
+                        <a class="tag" href="/tags/#args" title="args">args</a>
+                        
+                        <a class="tag" href="/tags/#salient" title="salient">salient</a>
+                        
+                        <a class="tag" href="/tags/#maps" title="maps">maps</a>
+                        
+                        <a class="tag" href="/tags/#modules" title="modules">modules</a>
+                        
+                        <a class="tag" href="/tags/#color" title="color">color</a>
+                        
+                        <a class="tag" href="/tags/#imutils" title="imutils">imutils</a>
+                        
+                        <a class="tag" href="/tags/#videostream" title="videostream">videostream</a>
+                        
+                        <a class="tag" href="/tags/#motion" title="motion">motion</a>
+                        
+                        <a class="tag" href="/tags/#argparse" title="argparse">argparse</a>
+                        
+                        <a class="tag" href="/tags/#region proposed" title="region proposed">region proposed</a>
+                        
+                        <a class="tag" href="/tags/#players" title="players">players</a>
+                        
+                        <a class="tag" href="/tags/#files" title="files">files</a>
+                        
+                        <a class="tag" href="/tags/#bing" title="bing">bing</a>
+                        
+                        <a class="tag" href="/tags/#jeff" title="jeff">jeff</a>
+                        
+                        <a class="tag" href="/tags/#grained" title="grained">grained</a>
+                        
+                        <a class="tag" href="/tags/#designed" title="designed">designed</a>
+                        
+                        <a class="tag" href="/tags/#neymar" title="neymar">neymar</a>
+                        
+                        <a class="tag" href="/tags/#scripts" title="scripts">scripts</a>
+                        
+                        <a class="tag" href="/tags/#operates" title="operates">operates</a>
+                        
+                        <a class="tag" href="/tags/#operations" title="operations">operations</a>
+                        
+                        <a class="tag" href="/tags/#soccer" title="soccer">soccer</a>
+                        
+                        <a class="tag" href="/tags/#command" title="command">command</a>
+                        
+                        <a class="tag" href="/tags/#output" title="output">output</a>
+                        
+                        <a class="tag" href="/tags/#key" title="key">key</a>
+                        
+                        <a class="tag" href="/tags/#helps" title="helps">helps</a>
+                        
+                        <a class="tag" href="/tags/#maximum" title="maximum">maximum</a>
+                        
+                        <a class="tag" href="/tags/#randomly" title="randomly">randomly</a>
+                        
+                        <a class="tag" href="/tags/#paper" title="paper">paper</a>
+                        
+                        <a class="tag" href="/tags/#successful" title="successful">successful</a>
+                        
+                        <a class="tag" href="/tags/#blog" title="blog">blog</a>
+                        
+                        <a class="tag" href="/tags/#automatically" title="automatically">automatically</a>
+                        
+                        <a class="tag" href="/tags/#pyimagesearch" title="pyimagesearch">pyimagesearch</a>
+                        
+                        <a class="tag" href="/tags/#required" title="required">required</a>
+                        
+                        <a class="tag" href="/tags/#requires" title="requires">requires</a>
+                        
+                        <a class="tag" href="/tags/#numpy" title="numpy">numpy</a>
+                        
+                        <a class="tag" href="/tags/#looping" title="looping">looping</a>
+                        
+                        <a class="tag" href="/tags/#cvpr" title="cvpr">cvpr</a>
+                        
+                        <a class="tag" href="/tags/#opencvâ" title="opencvâ">opencvâ</a>
+                        
+                        <a class="tag" href="/tags/#true" title="true">true</a>
+                        
+                        <a class="tag" href="/tags/#boat" title="boat">boat</a>
+                        
+                        <a class="tag" href="/tags/#spectral" title="spectral">spectral</a>
+                        
+                        <a class="tag" href="/tags/#gurus" title="gurus">gurus</a>
+                        
+                        <a class="tag" href="/tags/#fast" title="fast">fast</a>
+                        
+                        <a class="tag" href="/tags/#contours" title="contours">contours</a>
+                        
+                        <a class="tag" href="/tags/#question" title="question">question</a>
+                        
+                        <a class="tag" href="/tags/#bounding boxes" title="bounding boxes">bounding boxes</a>
+                        
+                        <a class="tag" href="/tags/#project" title="project">project</a>
+                        
+                        <a class="tag" href="/tags/#numdetections" title="numdetections">numdetections</a>
+                        
+                        <a class="tag" href="/tags/#installed" title="installed">installed</a>
+                        
+                        <a class="tag" href="/tags/#installation" title="installation">installation</a>
+                        
+                        <a class="tag" href="/tags/#guides" title="guides">guides</a>
+                        
+                        <a class="tag" href="/tags/#glance" title="glance">glance</a>
+                        
+                        <a class="tag" href="/tags/#static_saliency" title="static_saliency">static_saliency</a>
+                        
+                        <a class="tag" href="/tags/#proposals" title="proposals">proposals</a>
+                        
+                        <a class="tag" href="/tags/#proposing" title="proposing">proposing</a>
+                        
+                        <a class="tag" href="/tags/#point grayscale" title="point grayscale">point grayscale</a>
+                        
+                        <a class="tag" href="/tags/#robotics" title="robotics">robotics</a>
+                        
+                        <a class="tag" href="/tags/#robots" title="robots">robots</a>
+                        
+                        <a class="tag" href="/tags/#thresholded" title="thresholded">thresholded</a>
+                        
+                        <a class="tag" href="/tags/#starting" title="starting">starting</a>
+                        
+                        <a class="tag" href="/tags/#code" title="code">code</a>
+                        
+                    </div>
+                    <h1>OpenCV Saliency Detection</h1>
+                    
+                    
+                    <h2 class="subheading">转载自：https://www.pyimagesearch.com/2018/07/16/opencv-saliency-detection/</h2>
+                    
+                    <span class="meta">Posted by Adrian Rosebrock on July 16, 2018</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<p><a href="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_finegrained_players.jpg"><img src="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_finegrained_players.jpg" alt="" />
+</a></p>
+
+<p>Todayâ€™s tutorial is on saliency detection, the process of applying image processing and computer vision algorithms to automatically locate the most â€œsalientâ€� regions of an image.</p>
+
+<p><strong>In essence, saliency is what â€œstands outâ€� in a photo or scene,</strong> enabling your eye-brain connection to quickly (and essentially unconsciously) focus on the most important regions.</p>
+
+<p>For example — consider the figure at the top of this blog post where you see a soccer field with players on it. When looking at the photo, your eyes <em>automatically</em> focus on the players themselves as they are the most important areas of the photo. This automatic process of locating the important parts of an image or scene is called <em>saliency detection</em>.</p>
+
+<p>Saliency detection is applied to many aspects of computer vision and image processing, but some of the more popular applications of saliency include:</p>
+
+<ul>
+  <li>
+    <p><strong>Object detection</strong> — Instead of exhaustively applying a sliding window and image pyramid, only apply our (computationally expensive) detection algorithm to the most salient, interesting regions of an image most likely to contain an object</p>
+  </li>
+  <li>
+    <p><strong>Advertising and marketing</strong> — Design logos and ads that â€œpopâ€� and â€œstand outâ€� to us from a quick glance</p>
+  </li>
+  <li>
+    <p><strong>Robotics</strong> — Design robots with visual systems that are similar to our own</p>
+  </li>
+</ul>
+
+<p><strong>In the rest of todayâ€™s blog post, you will learn how to perform saliency detection using Python and OpenCVâ€™s saliency module — <em>keep reading to learn more!</em></strong></p>
+
+<h2 id="opencv-saliency-detection-with-python">OpenCV Saliency Detection with Python</h2>
+
+<p>Todayâ€™s post was inspired by <strong><a href="https://www.pyimagesearch.com/pyimagesearch-gurus">PyImageSearch Gurus course</a></strong>member, Jeff Nova.</p>
+
+<p>Inside one of the threads in the private PyImageSearch Gurus community forums Jeff wrote:</p>
+
+<p>Great question, Jeff!</p>
+
+<p>And to be totally honest, I had completely forgotten about OpenCVâ€™s saliency module.</p>
+
+<p>Jeffâ€™s question motivated me to do some research on the saliency module in OpenCV. After a few hours of research, trial and error, and just simply playing with the code, I was able to perform saliency detection using OpenCV.</p>
+
+<p>Since there arenâ€™t many tutorials on how to perform saliency detection, especially with the Python bindings, I wanted to write up a tutorial and share it with you.</p>
+
+<p>Enjoy it and I hope it helps you bring saliency detection to your own algorithms.</p>
+
+<h3 id="three-different-saliency-detection-algorithms">Three different saliency detection algorithms</h3>
+
+<p>In OpenCVâ€™s 
+saliency module there are three primary forms of saliency detection:</p>
+
+<ol>
+  <li>
+    <p><strong>Static saliency:</strong> This class of saliency detection algorithms relies on image features and statistics to localize the most interesting regions of an image.</p>
+  </li>
+  <li>
+    <p><strong>Motion saliency:</strong> Algorithms in this class typically rely on video or frame-by-frame inputs. The motion saliency algorithms process the frames, keeping track of objects that â€œmoveâ€�. Objects that move are considered salient.</p>
+  </li>
+  <li>
+    <p><strong>Objectness:</strong> Saliency detection algorithms that compute â€œobjectnessâ€� generate a set of â€œproposalsâ€�, or more simply bounding boxes of where it thinks an object may lie in an image.</p>
+  </li>
+</ol>
+
+<p><strong>Keep in mind that computing saliency is <em>not</em> object detection.</strong> The underlying saliency detection algorithm has <em>no idea</em> if there is a particular object in an image or not.</p>
+
+<p>Instead, the saliency detector is simply reporting where it <em>thinks</em> an object may lie in the image — it is up to you and your actual object detection/classification algorithm to:</p>
+
+<ol>
+  <li>
+    <p>Process the region proposed by the saliency detector</p>
+  </li>
+  <li>
+    <p>Predict/classify the region and make any decisions on this prediction</p>
+  </li>
+</ol>
+
+<p><strong>Saliency detectors are often very fast algorithms capable of running in real-time. The results of the saliency detector are then passed into more computationally expensive algorithms that you would not want to run on every single pixel of the input image.</strong></p>
+
+<h3 id="opencvâs-saliency-detectors">OpenCVâ€™s saliency detectors</h3>
+
+<p>To utilize OpenCVâ€™s saliency detectors you will need OpenCV 3 or greater. OpenCVâ€™s official documentation on their 
+saliency module can be found on <a href="https://docs.opencv.org/3.4.2/d8/d65/group__saliency.html">this page</a>.</p>
+
+<p>Keep in mind that you will need to have OpenCV compiled with the 
+contrib module enabled. If you have followed any of my <a href="https://www.pyimagesearch.com/opencv-tutorials-resources-guides">OpenCV install tutorials</a> on PyImageSearch you will have the 
+contrib module installed.</p>
+
+<p><em><strong>Note:</strong>I found that OpenCV 3.3 does not work with the motion saliency method (covered later in this blog post) but works with all other saliency implementations. If you find yourself needing motion saliency be sure you are using OpenCV 3.4 or greater.</em></p>
+
+<p>You can check if the 
+saliency module is installed by opening up a Python shell and trying to import it:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>$ python»&gt; import cv2»&gt; cv2.saliency&lt;module ‘cv2.saliency’&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>import cv2</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>&lt;module ‘cv2.saliency’&gt;</p>
+
+<p>If the import succeeds, congrats — you have the 
+contrib extra modules installed! But if the import fails, you will need to follow one of my <a href="https://www.pyimagesearch.com/opencv-tutorials-resources-guides">guides to install OpenCV</a> with the 
+contrib modules.</p>
+
+<p>OpenCV provides us with four implementations of saliency detectors with Python bindings, including:</p>
+
+<p>cv2.saliency.ObjectnessBING_create()</p>
+
+<p>cv2.saliency.StaticSaliencySpectralResidual_create()</p>
+
+<p>cv2.saliency.StaticSaliencyFineGrained_create()</p>
+
+<p>cv2.saliency.MotionSaliencyBinWangApr2014_create()</p>
+
+<p>Each of the above constructors returns an object implementing a 
+.computeSaliency method — we call this method on our input image, returning a two-tuple of:</p>
+
+<ul>
+  <li>
+    <p>A boolean indicating if computing the saliency was successful or not</p>
+  </li>
+  <li>
+    <p>The output saliency map which we can use to derive the most â€œinterestingâ€� regions of an image</p>
+  </li>
+</ul>
+
+<p>In the remainder of todayâ€™s blog post, I will show you how to perform saliency detection using each of these algorithms.</p>
+
+<h3 id="saliency-detection-project-structure">Saliency detection project structure</h3>
+
+<p>Be sure to visit the <strong><em>“Downloads”</em></strong>section of the blog post to grab the Python scripts, image files, and trained model files.</p>
+
+<p>From there, our project structure can be viewed in a terminal using the 
+tree command:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>$ tree –dirsfirst.â”œâ”€â”€ imagesâ”‚ â”œâ”€â”€ barcelona.jpgâ”‚ â”œâ”€â”€ boat.jpgâ”‚ â”œâ”€â”€ neymar.jpgâ”‚ â””â”€â”€ players.jpgâ”œâ”€â”€ objectness_trained_model [9 entries]â”‚ â”œâ”€â”€ ObjNessB2W8HSV.idx.yml.gzâ”‚ â”œâ”€â”€ …â”œâ”€â”€ static_saliency.pyâ”œâ”€â”€ objectness_saliency.pyâ””â”€â”€ motion_saliency.py 2 directories, 16 files</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>.</p>
+
+<p>â”‚ â”œâ”€â”€ barcelona.jpg</p>
+
+<p>â”‚ â”œâ”€â”€ neymar.jpg</p>
+
+<p>â”œâ”€â”€ objectness_trained_model [9 entries]</p>
+
+<p>â”‚ â”œâ”€â”€ …</p>
+
+<p>â”œâ”€â”€ objectness_saliency.py</p>
+
+<p> </p>
+
+<p>In our project folder we have two directories:</p>
+
+<p>image/ : A selection of testing images.</p>
+
+<p>objectness_trained_model/ : This is our model directory for the Objectness Saliency. Included are 9 .yaml files which comprising the objectness model iteslf.</p>
+
+<p>We’re going to review three example scripts today:</p>
+
+<p>static_saliency.py : This script implements two forms of Static Saliency (based on image features and statistics). We’ll be reviewing this script first.</p>
+
+<p>objectness_saliency.py : Uses the BING Objectness Saliency method to generate a list of object proposal regions.</p>
+
+<p>motion_saliency.py : This script will take advantage of your computer’s webcam and process live motion frames in real-time. Salient regions are computed using the Wang and Dudek 2014 method covered later in this guide.</p>
+
+<h3 id="static-saliency">Static saliency</h3>
+
+<p>OpenCV implements two algorithms for static saliency detection.</p>
+
+<ol>
+  <li>
+    <p>The first method is from Montabone and Sotoâ€™s 2010 publication, <a href="https://www.sciencedirect.com/science/article/pii/S0262885609001371"><em>Human detection using a mobile platform and novel features derived from a visual saliency mechanism</em></a>. This algorithm was initially used for detecting humans in images and video streams but can also be generalized to other forms of saliency as well.</p>
+  </li>
+  <li>
+    <p>The second method is by Hou and Zhang in their 2007 CVPR paper, <a href="http://bcmi.sjtu.edu.cn/~zhangliqing/Papers/2007CVPR_Houxiaodi_04270292.pdf"><em>Saliency detection: A spectral residual approach</em></a>.</p>
+  </li>
+</ol>
+
+<p>This static saliency detector operates on the log-spectrum of an image, computes saliency residuals in this spectrum, and then maps the corresponding salient locations back to the spatial domain. Be sure to refer to the paper for more details.</p>
+
+<p>Letâ€™s go ahead and try both of these static saliency detectors. Open up 
+static_salency.py and insert the following code:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td># import the necessary packagesimport argparseimport cv2 # construct the argument parser and parse the argumentsap = argparse.ArgumentParser()ap.add_argument(“-i”, “–image”, required=True, help=”path to input image”)args = vars(ap.parse_args()) # load the input imageimage = cv2.imread(args[“image”])</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>import argparse</p>
+
+<p> </p>
+
+<p>ap = argparse.ArgumentParser()</p>
+
+<p>help=”path to input image”)</p>
+
+<p> </p>
+
+<p>image = cv2.imread(args[“image”])</p>
+
+<p>On <strong>Lines 2 and 3</strong> we import 
+argparse and 
+cv2 . The 
+argparse module will allow us to parse a single <a href="https://www.pyimagesearch.com/2018/03/12/python-argparse-command-line-arguments">command line argument</a> — the 
+–input image (<strong>Lines 6-9</strong>)<strong>.</strong> OpenCV (with the 
+contrib module) has everything we need to compute static saliency maps.</p>
+
+<p>If you don’t have OpenCV installed you may follow my <a href="https://www.pyimagesearch.com/opencv-tutorials-resources-guides">OpenCV installation guides</a>. At the risk of being a broken record, I’ll repeat my recommendation that you should grab at least OpenCV 3.4 as I had trouble with OpenCV 3.3 for motion saliency further down in this blog post.</p>
+
+<p>We then load the image into memory on <strong>Line 12</strong>.</p>
+
+<p>Our <strong>first static saliency method</strong> is static spectral saliency. Let’s go ahead and compute the saliency map of the image and display it:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td># initialize OpenCV’s static saliency spectral residual detector and# compute the saliency mapsaliency = cv2.saliency.StaticSaliencySpectralResidual_create()(success, saliencyMap) = saliency.computeSaliency(image)saliencyMap = (saliencyMap * 255).astype(“uint8”)cv2.imshow(“Image”, image)cv2.imshow(“Output”, saliencyMap)cv2.waitKey(0)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="compute-the-saliency-map">compute the saliency map</h1>
+
+<p>(success, saliencyMap) = saliency.computeSaliency(image)</p>
+
+<p>cv2.imshow(“Image”, image)</p>
+
+<p>cv2.waitKey(0)</p>
+
+<p>Using the 
+cv2.saliency module and calling the 
+StaticSaliencySpectralResidual_create() method, a static spectral residual 
+saliency object is instantiated (<strong>Line 16</strong>).</p>
+
+<p>From there we invoke the 
+computeSaliency method on <strong>Line 17</strong> while passing in our input 
+image .</p>
+
+<p>What’s the result?</p>
+
+<p>The result is a 
+saliencyMap , a floating point, grayscale image that highlights the most prominent, salient regions of the image. The range of floating point values is <em>[0, 1]</em> with values closer to 1 being the “interesting” areas and values closer to 0 being “uninteresting”.</p>
+
+<p>Are we ready to visualize the output?</p>
+
+<p>Not so fast! Before we can display the map, we need to scale the values to the range <em>[0, 255]</em> on <strong>Line 18</strong>.</p>
+
+<p>From there, we can display the original 
+image and 
+saliencyMap image to the screen (<strong>Lines 19 and 20</strong>) until a key is pressed (<strong>Line 21</strong>).</p>
+
+<p>The <strong>second static saliency method</strong> we’re going to apply is called “fine grained”. This next block mimics our first method, with the exception that we’re instantiating the fine grained object. We’re also going to perform a threshold to demonstrate a binary map that you might process for contours (i.e., to extract each salient region). Let’s see how it is done:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>23242526272829303132333435363738</td>
+      <td># initialize OpenCV’s static fine grained saliency detector and# compute the saliency mapsaliency = cv2.saliency.StaticSaliencyFineGrained_create()(success, saliencyMap) = saliency.computeSaliency(image) # if we would like a <em>binary</em> map that we could process for contours,# compute convex hull’s, extract bounding boxes, etc., we can# additionally threshold the saliency mapthreshMap = cv2.threshold(saliencyMap, 0, 255, cv2.THRESH_BINARY</td>
+      <td>cv2.THRESH_OTSU)[1] # show the imagescv2.imshow(“Image”, image)cv2.imshow(“Output”, saliencyMap)cv2.imshow(“Thresh”, threshMap)cv2.waitKey(0)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>24</p>
+
+<p>26</p>
+
+<p>28</p>
+
+<p>30</p>
+
+<p>32</p>
+
+<p>34</p>
+
+<p>36</p>
+
+<p>38</p>
+
+<h1 id="compute-the-saliency-map-1">compute the saliency map</h1>
+
+<p>(success, saliencyMap) = saliency.computeSaliency(image)</p>
+
+<h1 id="if-we-would-like-a-binary-map-that-we-could-process-for-contours">if we would like a <em>binary</em> map that we could process for contours,</h1>
+
+<h1 id="additionally-threshold-the-saliency-map">additionally threshold the saliency map</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>cv2.THRESH_BINARY</td>
+      <td>cv2.THRESH_OTSU)[1]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="show-the-images">show the images</h1>
+
+<p>cv2.imshow(“Output”, saliencyMap)</p>
+
+<p>cv2.waitKey(0)</p>
+
+<p>On <strong>Line 25</strong>, we instantiate the fine grained static 
+saliency object. From there we compute the 
+saliencyMap on <strong>Line 26</strong>.</p>
+
+<p>The contributors for this code of OpenCV implemented the fine grained saliency differently than the spectral saliency. This time our values are already scaled in the range <em>[0, 255]</em>, so we can go ahead and display on <strong>Line 36</strong>.</p>
+
+<p>One task you might perform is to compute a binary threshold image so that you can find your likely object region contours. This is performed on <strong>Lines 31 and 32</strong> and displayed on <strong>Line 37</strong>. The next steps would be a series of erosions and dilations (morphological operations) prior to finding and extracting contours. I’ll leave that as an exercise for you.</p>
+
+<p>To execute the static saliency detector be sure to download the source code and example to this post (see the <strong><em>“Downloads”</em></strong> section below) and then execute the following command:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>$ python static_saliency.py –image images/neymar.jpg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The image of Brazilian professional soccer player, Neymar Jr. first undergoes the spectral method:
+<img src="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_spectral_neymar.jpg" alt="" /></p>
+
+<p><strong>Figure 3:</strong> Static spectral saliency with OpenCV on a picture of an injured Neymar Jr., a well known soccer player.</p>
+
+<p>And then, after pressing a key, the fine grained method saliency map image is shown. This time I also display a threshold of the saliency map (which easily could have been applied to the spectral method as well):
+<img src="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_finegrained_neymar.jpg" alt="" /></p>
+
+<p><strong>Figure 4:</strong> Static saliency with OpenCV using the fine grained approach (<em>top-right</em>) and binary threshold of the saliency map (<em>bottom</em>).</p>
+
+<p>The fine grained map more closely resembles a human than the blurry blob in the previous spectral saliency map. The thresholded image in the <em>bottom center</em> would be a useful starting point in a pipeline to extract the ROI of the likely object.</p>
+
+<p>Now let’s try both methods on a photo of a boat:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>$ python static_saliency.py –image images/boat.jpg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The static spectral saliency map of the boat:
+<img src="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_spectral_boat.jpg" alt="" /></p>
+
+<p><strong>Figure 5:</strong> Static spectral saliency with OpenCV on a picture of a boat.</p>
+
+<p>And fine grained:
+<img src="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_finegrained_boat.jpg" alt="" /></p>
+
+<p><strong>Figure 6:</strong> Static fine grained saliency of a boat image (<em>top-right</em>) and binary threshold of the saliency map (<em>bottom</em>).</p>
+
+<p>And finally, let’s try both the spectral and fine grained static saliency methods on a picture of three soccer players:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>$ python static_saliency.py –image images/players.jpg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here’s the output of spectral saliency:
+<img src="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_spectral_players.jpg" alt="" /></p>
+
+<p><strong>Figure 7:</strong> A photo of three players undergoes static spectral saliency with OpenCV.</p>
+
+<p>As well as fine-grained saliency detection:
+<img src="https://www.pyimagesearch.com/wp-content/uploads/2018/07/opencv_saliency_finegrained_players.jpg" alt="" /></p>
+
+<p><strong>Figure 8:</strong> Three soccer players are highlighted in a saliency map created with OpenCV. This time a fine grained approach was used (<em>top-right</em>). Then, a binary threshold of the saliency map was computed which would be useful as a part of a contour detection pipeline (<em>bottom</em>).</p>
+
+<h3 id="objectness-saliency">Objectness saliency</h3>
+
+<p>OpenCV includes one objectness saliency detector — <em><a href="https://mmcheng.net/bing">BING: Binarized normed gradients for objectness estimation at 300fps</a></em>, by Cheng et al. (CVPR 2014).</p>
+
+<p>Unlike the other saliency detectors in OpenCV which are entirely self-contained in their implementation, the BING saliency detector requires nine separate model files for various window sizes, color spaces, and mathematical operations.</p>
+
+<p>The nine model files together are very small (~10KB) and extremely fast, making BING an excellent method for saliency detection.</p>
+
+<p>To see how we can use this objectness saliency detector with OpenCV open up 
+objectness_saliency.py and insert the following code:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1234567891011121314151617</td>
+      <td># import the necessary packagesimport numpy as npimport argparseimport cv2 # construct the argument parser and parse the argumentsap = argparse.ArgumentParser()ap.add_argument(“-m”, “–model”, required=True, help=”path to BING objectness saliency model”)ap.add_argument(“-i”, “–image”, required=True, help=”path to input image”)ap.add_argument(“-n”, “–max-detections”, type=int, default=10, help=”maximum # of detections to examine”)args = vars(ap.parse_args()) # load the input imageimage = cv2.imread(args[“image”])</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2</p>
+
+<p>4</p>
+
+<p>6</p>
+
+<p>8</p>
+
+<p>10</p>
+
+<p>12</p>
+
+<p>14</p>
+
+<p>16</p>
+
+<p>import numpy as np</p>
+
+<p>import cv2</p>
+
+<h1 id="construct-the-argument-parser-and-parse-the-arguments">construct the argument parser and parse the arguments</h1>
+
+<p>ap.add_argument(“-m”, “–model”, required=True,</p>
+
+<p>ap.add_argument(“-i”, “–image”, required=True,</p>
+
+<p>ap.add_argument(“-n”, “–max-detections”, type=int, default=10,</p>
+
+<p>args = vars(ap.parse_args())</p>
+
+<h1 id="load-the-input-image">load the input image</h1>
+
+<p>On <strong>Lines 2-4</strong> we import our necessary packages. For this script, we’ll make use of NumPy, 
+argparse , and OpenCV.</p>
+
+<p>From there we parse three command line arguments on <strong>Lines 7-14:</strong></p>
+
+<p>–model : The path to the BING objectness saliency model.</p>
+
+<p>–image : Our input image path.</p>
+
+<p>–max-detections : The maximum number of detections to examine with the default set to 
+10 .</p>
+
+<p>Next, we load our 
+image into memory (<strong>Line 17</strong>).</p>
+
+<p>Let’s compute objectness saliency:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td># initialize OpenCV’s objectness saliency detector and set the path# to the input model filessaliency = cv2.saliency.ObjectnessBING_create()saliency.setTrainingPath(args[“model”]) # compute the bounding box predictions used to indicate saliency(success, saliencyMap) = saliency.computeSaliency(image)numDetections = saliencyMap.shape[0]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="to-the-input-model-files">to the input model files</h1>
+
+<p>saliency.setTrainingPath(args[“model”])</p>
+
+<h1 id="compute-the-bounding-box-predictions-used-to-indicate-saliency">compute the bounding box predictions used to indicate saliency</h1>
+
+<p>numDetections = saliencyMap.shape[0]</p>
+
+<p>On <strong>Line 21</strong> we initialize the objectness 
+saliency detector followed by establishing the training path on <strong>Line 22</strong>.</p>
+
+<p>Given these two actions, we can now compute the objectness 
+saliencyMap on <strong>Line 25</strong>.</p>
+
+<p>The number of available saliency detections can be obtained by examining the shape of the returned NumPy array (<strong>Line 26</strong>).</p>
+
+<p>Now let’s loop over each of the detections (up to our set maximum):</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2829303132333435363738394041</td>
+      <td># loop over the detectionsfor i in range(0, min(numDetections, args[“max_detections”])): # extract the bounding box coordinates (startX, startY, endX, endY) = saliencyMap[i].flatten() # randomly generate a color for the object and draw it on the image output = image.copy() color = np.random.randint(0, 255, size=(3,)) color = [int(c) for c in color] cv2.rectangle(output, (startX, startY), (endX, endY), color, 2)  # show the output image cv2.imshow(“Image”, output) cv2.waitKey(0)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>29</p>
+
+<p>31</p>
+
+<p>33</p>
+
+<p>35</p>
+
+<p>37</p>
+
+<p>39</p>
+
+<p>41</p>
+
+<p>for i in range(0, min(numDetections, args[“max_detections”])):</p>
+
+<p>(startX, startY, endX, endY) = saliencyMap[i].flatten()</p>
+
+<p># randomly generate a color for the object and draw it on the image</p>
+
+<p>color = np.random.randint(0, 255, size=(3,))</p>
+
+<p>cv2.rectangle(output, (startX, startY), (endX, endY), color, 2)</p>
+
+<p># show the output image</p>
+
+<p>cv2.waitKey(0)</p>
+
+<p>On <strong>Line 29</strong>, we begin looping over the detections up to the maximum detection count which is contained within our command line 
+args dictionary.</p>
+
+<p>Inside the loop, we first extract the bounding box coordinates (<strong>Line 31</strong>).</p>
+
+<p>Then we 
+copy the image for display purposes (<strong>Line 34</strong>), followed by assigning a random 
+color to the bounding box (<strong>Lines 35-36</strong>).</p>
+
+<p>To see OpenCVâ€™s objectness saliency detector in action be sure to download the source code + example images and then execute the following command:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>$ python objectness_saliency.py –model objectness_trained_model –image images/barcelona.jpg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>–image images/barcelona.jpg</p>
+
+<p><a href="https://s3-us-west-2.amazonaws.com/static.pyimagesearch.com/saliency-detection/opencv_saliency_objectness.gif"><img src="https://s3-us-west-2.amazonaws.com/static.pyimagesearch.com/saliency-detection/opencv_saliency_objectness.gif" alt="" />
+</a><strong>Figure 9:</strong> The objectness saliency detector (BING method) with OpenCV produces a total of 10 object region proposals as shown in the animation.</p>
+
+<p>Here you can see that the objectness saliency method does a good job proposing regions of the input image where both Lionel Messi and Luis Saurez are standing/kneeling on the pitch.</p>
+
+<p>You can imagine taking each of these proposed bounding box regions and passing them into a classifier or object detector for further prediction — and best of all, this method would be more computationally efficient than exhaustively applying a series of <a href="https://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv">image pyramids</a> and <a href="https://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv">sliding windows</a>.</p>
+
+<h3 id="motion-saliency">Motion saliency</h3>
+
+<p>The final OpenCV saliency detector comes from Wang and Dudekâ€™s 2014 publication, <a href="https://ieeexplore.ieee.org/document/6910012"><em>A fast self-tuning background subtraction algorithm</em></a>.</p>
+
+<p>This algorithm is designed to work on video feeds where objects that move in the video feed are considered salient.</p>
+
+<p>Open up 
+motion_saliency.py and insert the following code:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td># import the necessary packagesfrom imutils.video import VideoStreamimport imutilsimport timeimport cv2 # initialize the motion saliency object and start the video streamsaliency = Nonevs = VideoStream(src=0).start()time.sleep(2.0)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>from imutils.video import VideoStream</p>
+
+<p>import time</p>
+
+<p> </p>
+
+<p>saliency = None</p>
+
+<p>time.sleep(2.0)</p>
+
+<p>We’re going to be working directly with our webcam in this script, so we first import the 
+VideoStream class from <a href="https://github.com/jrosebr1/imutils/blob/master/imutils/video/videostream.py">imutils</a> on <strong>Line 2</strong>. We’ll also 
+imutils itself, 
+time , and OpenCV (<strong>Lines 3-5</strong>).</p>
+
+<p>Now that our imports are out of the way, we’ll initialize our motion saliency object and kick off our threaded 
+VideoStream object (<strong>Line 9</strong>).</p>
+
+<p>From there we’ll begin looping and capturing a frame at the top of each cycle:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td># loop over frames from the video file streamwhile True: # grab the frame from the threaded video stream and resize it # to 500px (to speedup processing) frame = vs.read() frame = imutils.resize(frame, width=500)  # if our saliency object is None, we need to instantiate it if saliency is None: saliency = cv2.saliency.MotionSaliencyBinWangApr2014_create() saliency.setImagesize(frame.shape[1], frame.shape[0]) saliency.init()</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>while True:</p>
+
+<p># to 500px (to speedup processing)</p>
+
+<p>frame = imutils.resize(frame, width=500)</p>
+
+<p># if our saliency object is None, we need to instantiate it</p>
+
+<p>saliency = cv2.saliency.MotionSaliencyBinWangApr2014_create()</p>
+
+<p>saliency.init()</p>
+
+<p>On <strong>Line 16</strong> we grab a 
+frame followed by resizing it on <strong>Line 17</strong>. Reducing the size of the 
+frame will allow the image processing and computer vision techniques inside the loop to run faster. The less data there is to process, the faster our pipeline can run.</p>
+
+<p><strong>Lines 20-23</strong> instantiate OpenCVâ€™s motion 
+saliency object if it isn’t already established. For this script we’re using the Wang method, as the constructor is aptly named.</p>
+
+<p>Next, we’ll compute the saliency map and display our results:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>252627282930313233343536373839404142</td>
+      <td># convert the input frame to grayscale and compute the saliency # map based on the motion model gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) (success, saliencyMap) = saliency.computeSaliency(gray) saliencyMap = (saliencyMap * 255).astype(“uint8”)  # display the image to our screen cv2.imshow(“Frame”, frame) cv2.imshow(“Map”, saliencyMap) key = cv2.waitKey(1) &amp; 0xFF # if the <code class="highlighter-rouge">q</code> key was pressed, break from the loop if key == ord(“q”): break # do a bit of cleanupcv2.destroyAllWindows()vs.stop()</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>26</p>
+
+<p>28</p>
+
+<p>30</p>
+
+<p>32</p>
+
+<p>34</p>
+
+<p>36</p>
+
+<p>38</p>
+
+<p>40</p>
+
+<p>42</p>
+
+<p># map based on the motion model</p>
+
+<p>(success, saliencyMap) = saliency.computeSaliency(gray)</p>
+
+<p> </p>
+
+<p>cv2.imshow(“Frame”, frame)</p>
+
+<p>key = cv2.waitKey(1) &amp; 0xFF</p>
+
+<p># if the <code class="highlighter-rouge">q</code> key was pressed, break from the loop</p>
+
+<p>break</p>
+
+<h1 id="do-a-bit-of-cleanup">do a bit of cleanup</h1>
+
+<p>vs.stop()</p>
+
+<p>We convert the 
+frame to grayscale (<strong>Line 27</strong>) and subsequently compute our 
+saliencyMap (<strong>Line 28</strong>) — the Wang method requires grayscale frames.</p>
+
+<p>As the 
+saliencyMap contains float values in the range <em>[0, 1]</em>, we scale to the range <em>[0, 255]</em> and ensure that the value is an unsigned 8-bit integer (<strong>Line 29</strong>).</p>
+
+<p>From there, we display the original 
+frame and the 
+saliencyMap on <strong>Lines 32 and 33</strong>.</p>
+
+<p>We then check to see if the quit key (“q”) is pressed, and if it is, we break out of the loop and cleanup (<strong>Lines 34-42</strong>). Otherwise, we’ll continue to process and display saliency maps to our screen.</p>
+
+<p>To execute the motion saliency script enter the following command:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>$ python motion_saliency.py</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Below I have recorded an example demo of OpenCV’s motion saliency algorithm in action:</p>
+
+<p><strong><em>OpenCV Version Note:</em></strong><em>Motion Saliency didn’t work for me in OpenCV 3.3 (and didn’t throw an error either). I tested in 3.4 and 4.0.0-pre and it worked just fine so make sure you are running OpenCV 3.4 or better if you intend on applying motion saliency.</em></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>In todayâ€™s blog post you learned how to perform saliency detection using OpenCV and Python.</p>
+
+<p>In general, saliency detectors fall into three classes of algorithms:</p>
+
+<ol>
+  <li>
+    <p>Static saliency</p>
+  </li>
+  <li>
+    <p>Motion saliency</p>
+  </li>
+  <li>
+    <p>Objectness saliency</p>
+  </li>
+</ol>
+
+<p>OpenCV provides us with four implementations of saliency detectors with Python bindings, including:</p>
+
+<p>cv2.saliency.ObjectnessBING_create()</p>
+
+<p>cv2.saliency.StaticSaliencySpectralResidual_create()</p>
+
+<p>cv2.saliency.StaticSaliencyFineGrained_create()</p>
+
+<p>cv2.saliency.MotionSaliencyBinWangApr2014_create()</p>
+
+<p>I hope this guide helps you apply saliency detection using OpenCV + Python to your own applications!</p>
+
+<p><strong>To download the source code to todayâ€™s post (and be notified when future blog posts are published here on PyImageSearch), <em>just enter your email address in the form below!</em></strong></p>
+
+<h2 id="downloads">Downloads:</h2>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/07/16/a31a16d43dc234938e9292c61a530af4/" data-toggle="tooltip" data-placement="top" title="Import AI：">
+                        Previous<br>
+                        <span>Import AI：</span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="next">
+                        <a href="/2018/07/16/98cd4477ab123a20a5a89f7ad4fd4db9/" data-toggle="tooltip" data-placement="top" title="Learn cutting edge techniques from world-class data scientists – RapidMiner Wisdom">
+                        Next<br>
+                        <span>Learn cutting edge techniques from world-class data scientists – RapidMiner Wisdom</span>
+                        </a>
+                    </li>
+                    
+
+                </ul>
+
+
+                <!--Gitalk评论start  -->
+                
+                <!-- Gitalk end -->
+
+                
+
+            </div>
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#http" title="http" rel="5">
+                                    http
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#learning" title="learning" rel="29">
+                                    learning
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#learned" title="learned" rel="9">
+                                    learned
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#methods" title="methods" rel="6">
+                                    methods
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#science" title="science" rel="10">
+                                    science
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#https" title="https" rel="47">
+                                    https
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#experience" title="experience" rel="14">
+                                    experience
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#statistical" title="statistical" rel="6">
+                                    statistical
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#statistics" title="statistics" rel="7">
+                                    statistics
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#algorithms" title="algorithms" rel="18">
+                                    algorithms
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#industry" title="industry" rel="5">
+                                    industry
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#job" title="job" rel="5">
+                                    job
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#positive" title="positive" rel="5">
+                                    positive
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#applying" title="applying" rel="5">
+                                    applying
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#called" title="called" rel="5">
+                                    called
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#functions" title="functions" rel="13">
+                                    functions
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#result" title="result" rel="6">
+                                    result
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#python" title="python" rel="10">
+                                    python
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#data" title="data" rel="33">
+                                    data
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#machines" title="machines" rel="5">
+                                    machines
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#code" title="code" rel="13">
+                                    code
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#analysis" title="analysis" rel="11">
+                                    analysis
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#languages" title="languages" rel="5">
+                                    languages
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#lines" title="lines" rel="5">
+                                    lines
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#networks" title="networks" rel="11">
+                                    networks
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#examples" title="examples" rel="5">
+                                    examples
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#classes" title="classes" rel="5">
+                                    classes
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#created" title="created" rel="5">
+                                    created
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#generating" title="generating" rel="5">
+                                    generating
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#machine" title="machine" rel="6">
+                                    machine
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#steps" title="steps" rel="6">
+                                    steps
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#features" title="features" rel="9">
+                                    features
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#analytics" title="analytics" rel="14">
+                                    analytics
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#computationally" title="computationally" rel="5">
+                                    computationally
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#computing" title="computing" rel="8">
+                                    computing
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#files" title="files" rel="7">
+                                    files
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#operations" title="operations" rel="5">
+                                    operations
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#key" title="key" rel="5">
+                                    key
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#blog" title="blog" rel="9">
+                                    blog
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#required" title="required" rel="9">
+                                    required
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#true" title="true" rel="7">
+                                    true
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#systems" title="systems" rel="8">
+                                    systems
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#testing" title="testing" rel="5">
+                                    testing
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#online" title="online" rel="5">
+                                    online
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#google" title="google" rel="7">
+                                    google
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#humans" title="humans" rel="5">
+                                    humans
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#tasks" title="tasks" rel="7">
+                                    tasks
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#technology" title="technology" rel="7">
+                                    technology
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#technologies" title="technologies" rel="8">
+                                    technologies
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#performed" title="performed" rel="5">
+                                    performed
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#performance" title="performance" rel="6">
+                                    performance
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#training" title="training" rel="10">
+                                    training
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#trained" title="trained" rel="5">
+                                    trained
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#tools" title="tools" rel="5">
+                                    tools
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#approaches" title="approaches" rel="7">
+                                    approaches
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#applications" title="applications" rel="8">
+                                    applications
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#processing" title="processing" rel="9">
+                                    processing
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#models" title="models" rel="18">
+                                    models
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#neural" title="neural" rel="6">
+                                    neural
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#engineering" title="engineering" rel="12">
+                                    engineering
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#engineers" title="engineers" rel="9">
+                                    engineers
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#images" title="images" rel="10">
+                                    images
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#development" title="development" rel="13">
+                                    development
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#developing" title="developing" rel="11">
+                                    developing
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#based" title="based" rel="10">
+                                    based
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#highly" title="highly" rel="5">
+                                    highly
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#predictive" title="predictive" rel="6">
+                                    predictive
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#software" title="software" rel="13">
+                                    software
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#values" title="values" rel="11">
+                                    values
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#deep" title="deep" rel="8">
+                                    deep
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#optimization" title="optimization" rel="8">
+                                    optimization
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#package" title="package" rel="8">
+                                    package
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#services" title="services" rel="8">
+                                    services
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#import" title="import" rel="6">
+                                    import
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#datasets" title="datasets" rel="9">
+                                    datasets
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#tutorials" title="tutorials" rel="5">
+                                    tutorials
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#selection" title="selection" rel="5">
+                                    selection
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#modeling" title="modeling" rel="9">
+                                    modeling
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#web" title="web" rel="9">
+                                    web
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#parameters" title="parameters" rel="6">
+                                    parameters
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#decisions" title="decisions" rel="5">
+                                    decisions
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#text" title="text" rel="5">
+                                    text
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#extraction" title="extraction" rel="5">
+                                    extraction
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#machine learning" title="machine learning" rel="5">
+                                    machine learning
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#visualizations" title="visualizations" rel="8">
+                                    visualizations
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#aws" title="aws" rel="7">
+                                    aws
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#paid" title="paid" rel="11">
+                                    paid
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#requirements" title="requirements" rel="8">
+                                    requirements
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#benefits" title="benefits" rel="11">
+                                    benefits
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#charles" title="charles" rel="11">
+                                    charles
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#intelligence" title="intelligence" rel="8">
+                                    intelligence
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#designing" title="designing" rel="5">
+                                    designing
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#predicted" title="predicted" rel="5">
+                                    predicted
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#amazon" title="amazon" rel="7">
+                                    amazon
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#projects" title="projects" rel="5">
+                                    projects
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#clustering" title="clustering" rel="5">
+                                    clustering
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#distributions" title="distributions" rel="5">
+                                    distributions
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#coding" title="coding" rel="5">
+                                    coding
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#attention" title="attention" rel="5">
+                                    attention
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#practical" title="practical" rel="5">
+                                    practical
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#distributed" title="distributed" rel="5">
+                                    distributed
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#knowledge" title="knowledge" rel="6">
+                                    knowledge
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#computational" title="computational" rel="6">
+                                    computational
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#intelligent" title="intelligent" rel="5">
+                                    intelligent
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#customers" title="customers" rel="5">
+                                    customers
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#classification" title="classification" rel="5">
+                                    classification
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="#">Sun</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; SunJackson Blog 2018
+                    <br>
+                    Theme on <a href="https://github.com/SunJackson/SunJackson.github.io.git">GitHub</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=&repo=.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-122462118-1';
+    var _gaDomain = 'auto';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
