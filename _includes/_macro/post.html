@@ -14,6 +14,7 @@
     <link itemprop="mainEntityOfPage" href="{{ post.url | absolute_url }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta name="referrer" content="never">
       <meta itemprop="name" content="{{ site.author }}">
       <meta itemprop="description" content="{{ site.signature }}">
       <meta itemprop="image" content="{% assign default_avatar = site.images | append: '/avatar.gif' %}{{ site.avatar | default: default_avatar ) }}">
@@ -25,7 +26,7 @@
 
     {% unless headlessPost %}
       <header class="post-header">
-
+        <meta name="referrer" content="never">
         {% comment %} % Not to show title for quote posts that do not have a title {% endcomment %}
         {% unless is_index and post.type == 'quote' and post.title == nil %}
           <{% if site.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
