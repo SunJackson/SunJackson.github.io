@@ -4,6 +4,7 @@ title:      DeepLearning-Github排行
 subtitle:   深度学习，github
 date:       2018-07-22
 author:     SunJackson
+category:   Github监控
 header-img: img/background1.jpg
 catalog: true
 tags:

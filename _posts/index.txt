@@ -689,27 +689,45 @@ https://sunjackson.github.io/2018/2017/03/17/7cac613353ab3e5d92405513931021bd
 https://sunjackson.github.io/2018/2017/03/13/57fc22dd68b939dfaf335754110a6930
 https://sunjackson.github.io/2018/2017/02/07/3efd17cd537237018ae449a56fee8ef6
 https://sunjackson.github.io/2018/2017/02/03/529e446138f83b8c8d47991d4947ccd5
-4ab4d95736ae3124b545c31d10959980	../../jekyll-theme-next/_posts/2018-07/2018-07-23-4ab4d95736ae3124b545c31d10959980.md	Year 3 of Data, Beer, & Inspiration
-8c6732317708380597b80faea6ee678c	../../jekyll-theme-next/_posts/2018-07/2018-07-17-8c6732317708380597b80faea6ee678c.md	Why AI Isn’t A Black Box (And Its Business Value)
-75206d6ebab83e11b72cd8f7391485ea	../../jekyll-theme-next/_posts/2018-07/2018-07-23-75206d6ebab83e11b72cd8f7391485ea.md	Top 20 Python AI and Machine Learning Open Source Projects
-https://sunjackson.github.io/2018/2018/05/03/1a88d2b34000323e8decd2513d74e369
-a8cfe8e8504f3b4b92abc4640509687a	../../jekyll-theme-next/_posts/2018-07/2018-07-18-a8cfe8e8504f3b4b92abc4640509687a.md	Basic Statistics in Python: Probability
-https://sunjackson.github.io/2018/2017/07/05/a78e441c27ee34dc8d962ee18f9e78bd
-a827670dc7543ba4b0c5b54d626f7af1	../../jekyll-theme-next/_posts/2018-07/2018-07-21-a827670dc7543ba4b0c5b54d626f7af1.md	The Real Problems with Neural Machine Translation
-b2814ec418243840af2f8590bc5f50df	../../jekyll-theme-next/_posts/2018-07/2018-07-24-b2814ec418243840af2f8590bc5f50df.md	
-https://sunjackson.github.io/2018/2017/02/08/6bad89c991f136ab93dd31d120f2b5a4
-3ec0712fed653e83bc495cc33efccdcc	../../jekyll-theme-next/_posts/2018-07/2018-07-24-3ec0712fed653e83bc495cc33efccdcc.md	Most Common Jobs, By State
-b702466ae3983bada9a71cb6659519fd	../../jekyll-theme-next/_posts/2018-07/2018-07-23-b702466ae3983bada9a71cb6659519fd.md	When wife earns more than husband, they report a lesser gap
-ba2f27e7b85839b38dcd20c95c29c678	../../jekyll-theme-next/_posts/2018-07/2018-07-19-ba2f27e7b85839b38dcd20c95c29c678.md	Analysis: Do the shoes matter in marathon running?
-6493610e69cc39c1b47951b66a398a4d	../../jekyll-theme-next/_posts/2018-07/2018-07-19-6493610e69cc39c1b47951b66a398a4d.md	Learn to R blog series - Operators and Objects
-24930123eef83a93bbc96499672ffbde	../../jekyll-theme-next/_posts/2018-07/2018-07-23-24930123eef83a93bbc96499672ffbde.md	AI, Machine Learning and Data Science Roundup: July 2018
-b26f7228908e31aba3723a2ccff3fad2	../../jekyll-theme-next/_posts/2018-07/2018-07-20-b26f7228908e31aba3723a2ccff3fad2.md	A hex sticker wall, created with R
-187ad0ad484b3d698794d1811ae3692b	../../jekyll-theme-next/_posts/2018-07/2018-07-18-187ad0ad484b3d698794d1811ae3692b.md	Highlights from the useR! 2018 conference in Brisbane
-3fc8dc21e10f3c1f93a3c18cc5c035b6	../../jekyll-theme-next/_posts/2018-07/2018-07-17-3fc8dc21e10f3c1f93a3c18cc5c035b6.md	Video: R for AI, and the Not Hotdog workshop
-1eed6a1f736f3a73a8fcf48dcfbb547f	../../jekyll-theme-next/_posts/2018-07/2018-07-22-1eed6a1f736f3a73a8fcf48dcfbb547f.md	Of statistics class and judo class:  Beyond the paradigm of sequential education
-60057b3e2ad0347d98d365353e7fd652	../../jekyll-theme-next/_posts/2018-07/2018-07-21-60057b3e2ad0347d98d365353e7fd652.md	“A Headline That Will Make Global-Warming Activists Apoplectic”
-0d994f0586d833409d159f0d25ce4a64	../../jekyll-theme-next/_posts/2018-07/2018-07-20-0d994f0586d833409d159f0d25ce4a64.md	Where that title came from
-333c94e7d9d7322fa7266458ca23889a	../../jekyll-theme-next/_posts/2018-07/2018-07-19-333c94e7d9d7322fa7266458ca23889a.md	“The idea of replication is central not just to scientific practice but also to formal statistics . . . Frequentist statistics relies on the reference set of repeated experiments, and Bayesian statistics relies on the prior distribution which represents the population of effects.”
-e5d01c548816370585d4b290a4a4846b	../../jekyll-theme-next/_posts/2018-07/2018-07-18-e5d01c548816370585d4b290a4a4846b.md	If you have a measure, it will be gamed (politics edition).
-32428d4d92e93ab8a78a490af5db04a6	../../jekyll-theme-next/_posts/2018-07/2018-07-18-32428d4d92e93ab8a78a490af5db04a6.md	“For professional baseball players, faster hand-eye coordination linked to batting performance”
-162b3a7715e533d8a9de2415ac7fdb7f	../../jekyll-theme-next/_posts/2018-07/2018-07-18-162b3a7715e533d8a9de2415ac7fdb7f.md	Data-based ways of getting a job
+https://sunjackson.github.io/2018/2018/07/25/447fcaeff28e3c6c9baa72bbd3219b9b
+https://sunjackson.github.io/2018/2018/07/24/1f7d1f41e8593082bd06ca2c53645e7c
+https://sunjackson.github.io/2018/2018/07/24/c63a034726e138cfb0ab20509d71e5e6
+https://sunjackson.github.io/2018/2018/07/24/4fe8d079a02e39e181ed0473f334b20d
+https://sunjackson.github.io/2018/2018/07/24/1f7d1f41e8593082bd06ca2c53645e7c
+https://sunjackson.github.io/2018/2018/07/24/e07edadeed953c0086a8316c8cc5d9b3
+https://sunjackson.github.io/2018/2018/07/24/c3374d1b9ea438b1a51b256b2577418c
+https://sunjackson.github.io/2018/2018/07/24/2f031ff66c0f311f980bf578ade03cc9
+https://sunjackson.github.io/2018/2018/07/24/f4315b5a68e1372f854a67587f7b1d97
+https://sunjackson.github.io/2018/2018/07/22/1eed6a1f736f3a73a8fcf48dcfbb547f
+https://sunjackson.github.io/2018/2018/07/21/60057b3e2ad0347d98d365353e7fd652
+https://sunjackson.github.io/2018/2018/07/20/0d994f0586d833409d159f0d25ce4a64
+https://sunjackson.github.io/2018/2018/07/19/333c94e7d9d7322fa7266458ca23889a
+https://sunjackson.github.io/2018/2018/07/18/e5d01c548816370585d4b290a4a4846b
+https://sunjackson.github.io/2018/2018/07/18/32428d4d92e93ab8a78a490af5db04a6
+https://sunjackson.github.io/2018/2018/07/18/162b3a7715e533d8a9de2415ac7fdb7f
+https://sunjackson.github.io/2018/2018/07/24/be9eb1e36dc338b48b533b66e8c45d79
+https://sunjackson.github.io/2018/2018/07/24/f4315b5a68e1372f854a67587f7b1d97
+https://sunjackson.github.io/2018/2018/07/22/1eed6a1f736f3a73a8fcf48dcfbb547f
+https://sunjackson.github.io/2018/2018/07/21/60057b3e2ad0347d98d365353e7fd652
+https://sunjackson.github.io/2018/2018/07/20/0d994f0586d833409d159f0d25ce4a64
+https://sunjackson.github.io/2018/2018/07/19/333c94e7d9d7322fa7266458ca23889a
+https://sunjackson.github.io/2018/2018/07/18/e5d01c548816370585d4b290a4a4846b
+https://sunjackson.github.io/2018/2018/07/18/32428d4d92e93ab8a78a490af5db04a6
+https://sunjackson.github.io/2018/2018/07/18/162b3a7715e533d8a9de2415ac7fdb7f
+https://sunjackson.github.io/2018/2018/07/18/5207b8dd464a3f1cb80e5d9dd7ab0d61
+https://sunjackson.github.io/2018/2018/06/30/4680f63f05a03a89994d2343881f8a17
+https://sunjackson.github.io/2018/2017/07/31/ce31562042b83c5a9b73ae5be1a11ee8
+https://sunjackson.github.io/2018/2018/07/18/5207b8dd464a3f1cb80e5d9dd7ab0d61
+https://sunjackson.github.io/2018/2018/06/30/4680f63f05a03a89994d2343881f8a17
+https://sunjackson.github.io/2018/2017/07/31/ce31562042b83c5a9b73ae5be1a11ee8
+https://sunjackson.github.io/2018/2018/07/18/5207b8dd464a3f1cb80e5d9dd7ab0d61
+https://sunjackson.github.io/2018/2018/06/30/4680f63f05a03a89994d2343881f8a17
+https://sunjackson.github.io/2018/2017/07/31/ce31562042b83c5a9b73ae5be1a11ee8
+https://sunjackson.github.io/2018/2018/07/18/5207b8dd464a3f1cb80e5d9dd7ab0d61
+https://sunjackson.github.io/2018/2018/06/30/4680f63f05a03a89994d2343881f8a17
+https://sunjackson.github.io/2018/2017/07/31/ce31562042b83c5a9b73ae5be1a11ee8
+https://sunjackson.github.io/2018/2018/07/18/5207b8dd464a3f1cb80e5d9dd7ab0d61
+https://sunjackson.github.io/2018/2018/06/30/4680f63f05a03a89994d2343881f8a17
+https://sunjackson.github.io/2018/2017/07/31/ce31562042b83c5a9b73ae5be1a11ee8
+https://sunjackson.github.io/2018/2018/07/18/5207b8dd464a3f1cb80e5d9dd7ab0d61
+https://sunjackson.github.io/2018/2018/07/25/61f3e8a214a0364788b45f0e59d3eb89
