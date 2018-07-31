@@ -130,7 +130,7 @@ menu:
   about: /about/
   archives: /archives/
   tags: /tags/
-  sitemap: /index.txt
+  sitemap: /_post/index.txt
   commonweal: /404.html
 
 
