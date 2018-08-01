@@ -130,7 +130,7 @@ menu:
   about: /about/
   archives: /archives/
   tags: /tags/
-  sitemap: /_post/index.txt
+  sitemap: /index.txt
   commonweal: /404.html
 
 
@@ -148,7 +148,7 @@ menu_icons:
   schedule: calendar
   tags: tags
   archives: archive
-  # sitemap: sitemap
+  sitemap: sitemap
   commonweal: heartbeat
 
 
