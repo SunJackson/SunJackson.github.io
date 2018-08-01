@@ -74,6 +74,7 @@ feed:
 # Plugins
 ## Docs: https://help.github.com/articles/configuring-jekyll-plugins/
 plugins:
+ - jekyll-paginate
  - jemoji
  - jekyll-sitemap
  - jekyll-feed
@@ -129,7 +130,7 @@ menu:
   about: /about/
   archives: /archives/
   tags: /tags/
-  # sitemap: /sitemap.xml
+  sitemap: /_post/index.txt
   commonweal: /404.html
 
 
@@ -147,7 +148,7 @@ menu_icons:
   schedule: calendar
   tags: tags
   archives: archive
-  sitemap: sitemap
+  # sitemap: sitemap
   commonweal: heartbeat
 
 
@@ -583,7 +584,6 @@ local_search:
 # Alias: {% extlink text url "title" %}
 exturl: false
 
-plugins: [jekyll-paginate]
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
