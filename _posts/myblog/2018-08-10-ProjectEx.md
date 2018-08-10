@@ -138,7 +138,7 @@ TextRank 根据 PageRank 改编而来的算法
 
 4）[noise contrastive estimation 文献](https://yinwenpeng.wordpress.com/2013/09/25/noise-contrastive-estimation/)
 
-5）[噪声对比估计加速词向量训练](http://models.paddlepaddle.org/2017/04/21/nce-cost-README.html)
+5）[噪声对比估计加速词向量训练](http://paddlepaddle.org/docs/develop/models/nce_cost/README.html)
 
 6）[TFIDF 概率解释](http://www.cnblogs.com/weidagang2046/archive/2012/10/22/tf-idf-from-probabilistic-view.html)
 
