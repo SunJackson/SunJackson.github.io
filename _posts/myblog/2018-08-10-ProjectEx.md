@@ -94,7 +94,7 @@ TextRank 根据 PageRank 改编而来的算法
 
 - PageRank
 
-    <a><img src="https://latex.codecogs.com/png.latex?$$S(V_i)=(1-d)+d\cdot\sum_{j\in In(V_i)}\frac{1}{|Out(V_j)|}S(V_j)$$" title="PageRank" /></a>
+    $$S(V_i)=(1-d)+d\cdot\sum_{j\in In(V_i)}\frac{1}{|Out(V_j)|}S(V_j)$$
 
     - <img src="https://latex.codecogs.com/png.latex?$d$"> 是阻尼系数，一般设置为 0.85。
     - <img src="https://latex.codecogs.com/png.latex?$In(V_i)$">  是存在指向网页 
@@ -105,8 +105,7 @@ TextRank 根据 PageRank 改编而来的算法
     PageRank 需要使用上面的公式多次迭代才能得到结果。初始时，可以设置每个网页的重要性为 1。
     
 - TextRank
-
-    <a><img src="https://latex.codecogs.com/png.latex?$$WS(V_i)=(1-d)+d\cdot\sum_{V_j\in In(Vi)}\frac{w_{ji}}{\sum_{V_k\in Out(V_j)}w_{jk}}WS(V_j)$$" title="TextRank" /></a>
+    $$WS(V_i)=(1-d)+d\cdot\sum_{V_j\in In(Vi)}\frac{w_{ji}}{\sum_{V_k\in Out(V_j)}w_{jk}}WS(V_j)$$
 
     - <img src="https://latex.codecogs.com/png.latex?$w_{ij}$"> 就是是为图中节点 <img src="https://latex.codecogs.com/png.latex?$V_i$"> 到 <img src="https://latex.codecogs.com/png.latex?$V_j$"> 的边的权值 。
     - <img src="https://latex.codecogs.com/png.latex?$d$"> 依然为阻尼系数，代表从图中某一节点指向其他任意节点的概率，一般取值为0.85。
@@ -114,7 +113,7 @@ TextRank 根据 PageRank 改编而来的算法
     
 在 TextRank 构建的图中，默认节点就是句子，权值 <img src="https://latex.codecogs.com/png.latex?$w_{ij}$"> 就是两个句子 <img src="https://latex.codecogs.com/png.latex?$S_i$"> 和 <img src="https://latex.codecogs.com/png.latex?$S_j$"> 的相似程度。两个句子的相似度使用下面的公式来计算：
 
-<img src="https://latex.codecogs.com/png.latex?$$Similarity(S_i,S_j)=\frac{|{w_k| w_k \in S_i \& w_j \in S_j}|}{\log(|S_i|)+\log(|S_j|)}$$">
+$$Similarity(S_i,S_j)=\frac{|{w_k| w_k \in S_i \& w_j \in S_j}|}{\log(|S_i|)+\log(|S_j|)}$$
 
 分子是在两个句子中都出现的单词的数量，<img src="https://latex.codecogs.com/png.latex?$$|S_i|$$"> 是句子 i 中的单词数。
 
