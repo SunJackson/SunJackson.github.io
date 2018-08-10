@@ -26,6 +26,9 @@
 
     {% unless headlessPost %}
       <header class="post-header">
+        <script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
         <meta name="referrer" content="never">
         {% comment %} % Not to show title for quote posts that do not have a title {% endcomment %}
         {% unless is_index and post.type == 'quote' and post.title == nil %}
