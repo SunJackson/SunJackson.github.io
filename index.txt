@@ -1771,7 +1771,6 @@ https://sunjackson.github.io/2016/04/14/790c54838beb3aa381cde81bcb962bef
 https://sunjackson.github.io/2015/12/04/2abc3147d17d37279cb7bde9756b0bb9
 https://sunjackson.github.io/2015/10/16/ab721384a6253bceb5d3cec16660843b
 https://sunjackson.github.io/2018/08/08/d1bbcc3e5a913f88ba8c88f0b717be54
-<<<<<<< HEAD
 https://sunjackson.github.io/2018/08/10/16df5ca1ffa63aaa96511c53bce5d824
 https://sunjackson.github.io/2018/08/09/4c314edc5b4232d185be870234344658
 https://sunjackson.github.io/2018/08/11/4206204815b33c96834ca91e68c5173a
@@ -1815,7 +1814,6 @@ https://sunjackson.github.io/2018/08/11/d9a2959978643db3b4c0ad2ed8267497
 https://sunjackson.github.io/2018/08/03/2abc765f50233713b73e1ba9f5a248fd
 https://sunjackson.github.io/2018/08/07/002cd22f5bd33a43951384104d3d077d
 https://sunjackson.github.io/2018/08/05/4ea527ec3b8a34d8aff93f7d39fbcf6d
-=======
 https://sunjackson.github.io/2018/08/10/087f689b4ebf34b19980dc142ed8ea22
 https://sunjackson.github.io/2018/08/10/86c817c09cfa3485af9af500df82427f
 https://sunjackson.github.io/2018/08/10/4206204815b33c96834ca91e68c5173a
@@ -1837,12 +1835,8 @@ https://sunjackson.github.io/2018/08/13/c810b640c8c2309c80ed0aa2e81dc456
 https://sunjackson.github.io/2018/08/12/087f689b4ebf34b19980dc142ed8ea22
 https://sunjackson.github.io/2018/08/13/aa5e3328e1a83bb9a9bf3dd899b83517
 https://sunjackson.github.io/2018/08/08/989ffb853bd0324ab13d293c815d8d4f
-<<<<<<< HEAD
 https://sunjackson.github.io/2018/08/11/f3e62855f7613e1b98f4f550ee51ad9a
 https://sunjackson.github.io/2018/08/12/f6958f0471e036a398dadb9ed14f5b41
-=======
-
->>>>>>> ebf80bcc22fdcbb47fb38bc57a81f7c5ef10a35c
 https://sunjackson.github.io/2018/08/14/325c5888fcf53d599b5cad0c1ba60232
 https://sunjackson.github.io/2018/08/14/8927583ff312306aa1da20093b339bf4
 https://sunjackson.github.io/2018/08/13/a32e9985f8e23f1880f2ff7652ce9683
